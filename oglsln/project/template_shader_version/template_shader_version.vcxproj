@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AFD76F14-864B-431B-AAC1-1C9916A432ED}</ProjectGuid>
+    <ProjectGuid>{CB191348-3B6E-41EE-ACB0-A99865AF4002}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>template_shader_version</RootNamespace>
   </PropertyGroup>
@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Include;$(SolutionDir)\Include\ImageMagick;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
@@ -55,12 +55,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\assimp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\assimp;$(SolutionDir)\Include\ImageMagick-6</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);glew32.lib;common.lib</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);glew32.lib;common.lib;CORE_DB_Magick++_.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)\$(Configuration);$(SolutionDir)\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -83,10 +83,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\template_shader_version\main.cpp" />
+    <ClCompile Include="..\..\source\template_shader_version\shader_technique.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\source\template_shader_version\shader.fs" />
     <None Include="..\..\source\template_shader_version\shader.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\template_shader_version\shader_technique.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

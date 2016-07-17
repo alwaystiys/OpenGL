@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "template", "project\template\template.vcxproj", "{4D541AE7-D3CF-472D-99EB-4AC820090ABA}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "common", "project\common\common.vcxproj", "{44417F33-3ACF-49E3-8765-BC9864A7C699}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "project01_glutEvn", "project\project01_glutEvn\project01_glutEvn.vcxproj", "{B9A45E1C-8DB9-4F32-AFEB-6D18454A3B27}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "project_test", "project\project_test\project_test.vcxproj", "{AFD76F14-864B-431B-AAC1-1C9916A432ED}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "template_shader_version", "project\template_shader_version\template_shader_version.vcxproj", "{CB191348-3B6E-41EE-ACB0-A99865AF4002}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "template_noshader_version", "project\template_noshader_version\template_noshader_version.vcxproj", "{E8223141-7D07-4B49-9747-2A3E8B352A63}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "template_shader_version", "project\template_shader_version\template_shader_version.vcxproj", "{AFD76F14-864B-431B-AAC1-1C9916A432ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,26 +15,22 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4D541AE7-D3CF-472D-99EB-4AC820090ABA}.Debug|Win32.ActiveCfg = Debug|Win32
-		{4D541AE7-D3CF-472D-99EB-4AC820090ABA}.Debug|Win32.Build.0 = Debug|Win32
-		{4D541AE7-D3CF-472D-99EB-4AC820090ABA}.Release|Win32.ActiveCfg = Release|Win32
-		{4D541AE7-D3CF-472D-99EB-4AC820090ABA}.Release|Win32.Build.0 = Release|Win32
 		{44417F33-3ACF-49E3-8765-BC9864A7C699}.Debug|Win32.ActiveCfg = Debug|Win32
 		{44417F33-3ACF-49E3-8765-BC9864A7C699}.Debug|Win32.Build.0 = Debug|Win32
 		{44417F33-3ACF-49E3-8765-BC9864A7C699}.Release|Win32.ActiveCfg = Release|Win32
 		{44417F33-3ACF-49E3-8765-BC9864A7C699}.Release|Win32.Build.0 = Release|Win32
-		{B9A45E1C-8DB9-4F32-AFEB-6D18454A3B27}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B9A45E1C-8DB9-4F32-AFEB-6D18454A3B27}.Debug|Win32.Build.0 = Debug|Win32
-		{B9A45E1C-8DB9-4F32-AFEB-6D18454A3B27}.Release|Win32.ActiveCfg = Release|Win32
-		{B9A45E1C-8DB9-4F32-AFEB-6D18454A3B27}.Release|Win32.Build.0 = Release|Win32
-		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Debug|Win32.ActiveCfg = Debug|Win32
-		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Debug|Win32.Build.0 = Debug|Win32
-		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Release|Win32.ActiveCfg = Release|Win32
-		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Release|Win32.Build.0 = Release|Win32
 		{AFD76F14-864B-431B-AAC1-1C9916A432ED}.Debug|Win32.ActiveCfg = Debug|Win32
 		{AFD76F14-864B-431B-AAC1-1C9916A432ED}.Debug|Win32.Build.0 = Debug|Win32
 		{AFD76F14-864B-431B-AAC1-1C9916A432ED}.Release|Win32.ActiveCfg = Release|Win32
 		{AFD76F14-864B-431B-AAC1-1C9916A432ED}.Release|Win32.Build.0 = Release|Win32
+		{CB191348-3B6E-41EE-ACB0-A99865AF4002}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CB191348-3B6E-41EE-ACB0-A99865AF4002}.Debug|Win32.Build.0 = Debug|Win32
+		{CB191348-3B6E-41EE-ACB0-A99865AF4002}.Release|Win32.ActiveCfg = Release|Win32
+		{CB191348-3B6E-41EE-ACB0-A99865AF4002}.Release|Win32.Build.0 = Release|Win32
+		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Debug|Win32.Build.0 = Debug|Win32
+		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Release|Win32.ActiveCfg = Release|Win32
+		{E8223141-7D07-4B49-9747-2A3E8B352A63}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
