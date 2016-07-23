@@ -25,6 +25,9 @@ class ShaderTechnique : public Technique {
 public:
     ShaderTechnique();
 	virtual bool Init();
+	void setScalef(float f);
+private:
+	GLuint m_uScaleLocation;
 };
 
 #endif

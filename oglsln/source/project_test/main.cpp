@@ -68,6 +68,9 @@ public:
     {
         glClear(GL_COLOR_BUFFER_BIT);
 		glBindVertexArray(m_VAO);
+		static float Scale = 0.0f;
+		Scale += 0.001f;
+		m_pEffect->setScalef(sinf(Scale));
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 		GLUTBackendSwapBuffers();
     }

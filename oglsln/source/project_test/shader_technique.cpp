@@ -45,7 +45,17 @@ bool ShaderTechnique::Init()
         return false;
     }
 
+	m_uScaleLocation = GetUniformLocation("u_scale");
+	if(m_uScaleLocation == 0xFFFFFFFF){
+		printf("u_scale init fail!");
+		return false;
+	}
+
     return true;
+}
+
+void ShaderTechnique::setScalef(float f){
+	glUniform1f(m_uScaleLocation, f);
 }
 
 
