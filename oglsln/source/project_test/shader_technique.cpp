@@ -46,10 +46,15 @@ bool ShaderTechnique::Init()
     }
 
 	m_uScaleLocation = GetUniformLocation("u_scale");
-	if(m_uScaleLocation == 0xFFFFFFFF){
-		printf("u_scale init fail!");
+	//if(m_uScaleLocation == 0xFFFFFFFF){
+	//	printf("u_scale init fail!\n");
+	//	return false;
+	//}
+	m_uWorldLocation = GetUniformLocation("u_world");
+	/*if(m_uWorldLocation == 0xFFFFFFFF){
+		printf("u_world init fail!\n");
 		return false;
-	}
+	}*/
 
     return true;
 }
@@ -58,4 +63,7 @@ void ShaderTechnique::setScalef(float f){
 	glUniform1f(m_uScaleLocation, f);
 }
 
+void ShaderTechnique::setWorldMatrix(Matrix4f matf){
+	glUniformMatrix4fv(m_uWorldLocation, 1, GL_TRUE, (const GLfloat*)matf);
+}
 

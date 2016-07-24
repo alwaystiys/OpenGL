@@ -26,8 +26,10 @@ public:
     ShaderTechnique();
 	virtual bool Init();
 	void setScalef(float f);
+	void setWorldMatrix(Matrix4f matf);
 private:
 	GLuint m_uScaleLocation;
+	GLuint m_uWorldLocation;
 };
 
 #endif
