@@ -24,6 +24,7 @@
 #include "ogldev_util.h"
 #include "ogldev_app.h"
 #include "shader_technique.h"
+#include "ogldev_camera.h"
 #include "ogldev_glut_backend.h"
 #include "ogldev_pipeline.h"
 
@@ -40,6 +41,7 @@ public:
 	TemplateMain()
 	{
 		m_pEffect = NULL;
+		m_pCamera = NULL;
 		m_persProjInfo.FOV = 30.0f;
 		m_persProjInfo.Height = WINDOW_HEIGHT;
 		m_persProjInfo.Width = WINDOW_WIDTH;
@@ -50,10 +52,18 @@ public:
 	~TemplateMain()
 	{
 		delete m_pEffect;
+		delete m_pCamera;
 	}
 
 	bool Init()
 	{
+
+
+		Vector3f pos(0.0f, 0.0f, -3.0f);
+		Vector3f target(0.0f, 0.0f, 1.0f);
+		Vector3f up(0.0f, 5.0f, 0.0f);
+		m_pCamera = new Camera(WINDOW_WIDTH, WINDOW_HEIGHT, pos, target, up);
+
 		CreateVertexBuffer();
 		CreateIndiceBuffer();
 		m_pEffect = new ShaderTechnique();	
@@ -77,6 +87,8 @@ public:
 
 	virtual void RenderSceneCB()
 	{
+		m_pCamera->OnRender();
+
 		glClear(GL_COLOR_BUFFER_BIT);
 		glBindVertexArray(m_VAO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IBO);
@@ -85,14 +97,43 @@ public:
 		Scale += 0.1f;
 
 		Pipeline p;
-		p.Rotate(Scale, 0.0f, 0.0f);
+		p.Rotate(0.0f, Scale, 0.0f);
 		p.WorldPos(0.0f, 0.0f, 10.0f);
+		p.SetCamera(m_pCamera->GetPos(), m_pCamera->GetTarget(), m_pCamera->GetUp());
 		p.SetPerspectiveProj(m_persProjInfo);
-		m_pEffect->setWorldMatrix(p.GetWPTrans());
-		glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+		m_pEffect->setWorldMatrix(p.GetWVPTrans());
+		glDrawElements(GL_TRIANGLES, 18, GL_UNSIGNED_INT, 0);
 
 		GLUTBackendSwapBuffers();
 	}
+
+	virtual void KeyboardCB(OGLDEV_KEY OgldevKey)
+    {
+        switch (OgldevKey) {
+            case OGLDEV_KEY_ESCAPE:
+            case OGLDEV_KEY_q:
+                    GLUTBackendLeaveMainLoop();
+                    break;
+
+            case OGLDEV_KEY_a:
+                break;
+
+            case OGLDEV_KEY_s:
+                break;
+
+            case OGLDEV_KEY_z:
+                break;
+
+            case OGLDEV_KEY_x:
+                break;
+        }
+    }
+
+
+    virtual void PassiveMouseCB(int x, int y)
+    {
+        m_pCamera->OnMouse(x, y);
+    }
 
 private:
 	void CreateVertexBuffer()
@@ -100,11 +141,12 @@ private:
 		glGenVertexArrays(1, &m_VAO);
 		glBindVertexArray(m_VAO);
 
-		Vector3f vertivces[4];
+		Vector3f vertivces[5];
 		vertivces[0] = Vector3f(-1.0f, -1.0f, -1.0f);
 		vertivces[1] = Vector3f(1.0f, -1.0f, -1.0f);
-		vertivces[2] = Vector3f( 0.0f, -1.0f, 1.0f);
-		vertivces[3] = Vector3f( 0.0f, 1.0f, 0.0f);
+		vertivces[2] = Vector3f(-1.0f, -1.0f, 1.0f);
+		vertivces[3] = Vector3f(1.0f, -1.0f, 1.0f);
+		vertivces[4] = Vector3f( 0.0f, 1.0f, 0.0f);
 
 		glGenBuffers(1, &m_VBO);
 		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
@@ -114,10 +156,12 @@ private:
 
 	void CreateIndiceBuffer(){
 		unsigned int indices[] = {
-			1, 3, 0,
-			2, 3, 1,
-			0, 3, 2,
-			0, 2, 1
+			0, 4, 2,
+			2, 4, 3,
+			3, 4, 1,
+			1, 4, 0,
+			0, 2, 3,
+			0, 3, 1,
 		};
 		glGenBuffers(1, &m_IBO);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IBO);
@@ -129,6 +173,7 @@ private:
 	GLuint m_IBO;
 	ShaderTechnique* m_pEffect;
 	PersProjInfo m_persProjInfo;
+	Camera *m_pCamera;
 };
 
 
