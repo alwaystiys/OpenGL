@@ -56,6 +56,14 @@ bool ShaderTechnique::Init()
 		return false;
 	}*/
 
+	m_uSamplerLocation = GetUniformLocation("u_sampler");
+	if(m_uSamplerLocation == 0xFFFFFFFF){
+		printf("u_sampler init fail\n");
+		return false;
+	}
+
+
+
     return true;
 }
 
@@ -67,3 +75,6 @@ void ShaderTechnique::setWorldMatrix(Matrix4f matf){
 	glUniformMatrix4fv(m_uWorldLocation, 1, GL_TRUE, (const GLfloat*)matf);
 }
 
+void ShaderTechnique::setSampler(int i){
+	glUniform1i(m_uSamplerLocation, i);
+}

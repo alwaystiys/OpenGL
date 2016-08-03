@@ -27,9 +27,11 @@ public:
 	virtual bool Init();
 	void setScalef(float f);
 	void setWorldMatrix(Matrix4f matf);
+	void setSampler(int i);
 private:
 	GLuint m_uScaleLocation;
 	GLuint m_uWorldLocation;
+	GLuint m_uSamplerLocation;
 };
 
 #endif
