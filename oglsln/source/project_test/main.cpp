@@ -78,22 +78,32 @@ public:
 		if (!m_pTexture->Load()) {
 			return 1;
 		}
-
-		CreateVertexBuffer();
-		CreateIndiceBuffer();
+		m_pTexture->Bind(GL_TEXTURE0);
 		m_pEffect = new ShaderTechnique();	
 		if (!m_pEffect->Init()){
 			printf("Error initializing the lighting technique\n");
 			return false;	
 		}
 		m_pEffect->Enable();
+
+		CreateVertexBuffer();
+		CreateIndiceBuffer();
+
+		glGenVertexArrays(1, &m_VAO);
+		glBindVertexArray(m_VAO);
+		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IBO);
+
 		glEnableVertexAttribArray(0);
 		glEnableVertexAttribArray(1);
+
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)12);
 
 		glBindVertexArray(0);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
 		return true;
 	}
 
@@ -105,25 +115,22 @@ public:
 	virtual void RenderSceneCB()
 	{
 		m_pCamera->OnRender();
-
 		glClear(GL_COLOR_BUFFER_BIT);
-		glBindVertexArray(m_VAO);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IBO);
 
 		static float Scale = 0.0f;
 		Scale += 0.1f;
 	
 		Pipeline p;
 		p.Rotate(0.0f, Scale, 0.0f);
-		//p.Scale(0.5f, 0.5f, 0.5f);
-		//p.Scale(1.0f, 1.0f, 1.0f);
 		p.WorldPos(0.0f, 0.0f, 5.0f);
 		p.SetCamera(m_pCamera->GetPos(), m_pCamera->GetTarget(), m_pCamera->GetUp());
 		p.SetPerspectiveProj(m_persProjInfo);
 		m_pEffect->setWorldMatrix(p.GetWVPTrans());
 		m_pEffect->setSampler(0);
-		m_pTexture->Bind(GL_TEXTURE0);
+		
+		glBindVertexArray(m_VAO);
 		glDrawElements(GL_TRIANGLES, 18, GL_UNSIGNED_INT, 0);
+		glBindVertexArray(0);
 
 		GLUTBackendSwapBuffers();
 	}
@@ -154,16 +161,6 @@ public:
 private:
 	void CreateVertexBuffer()
 	{
-		glGenVertexArrays(1, &m_VAO);
-		glBindVertexArray(m_VAO);
-
-	/*	Vector3f vertivces[5];
-		vertivces[0] = Vector3f(-1.0f, -1.0f, -1.0f);
-		vertivces[1] = Vector3f(-1.0f, -1.0f, 1.0f);
-		vertivces[2] = Vector3f(1.0f, -1.0f, 1.0f);
-		vertivces[3] = Vector3f(1.0f, -1.0f, -1.0f);
-		vertivces[4] = Vector3f( 0.0f, 1.0f, 0.0f);*/
-
 		Vertex vertices[5] = {
 			Vertex(Vector3f(-1.0f, -1.0f, -1.0f), Vector2f(0.0f, 0.0f)),
 			Vertex(Vector3f(-1.0f, -1.0f, 1.0f), Vector2f(0.5f, 0.0f)),
@@ -171,16 +168,10 @@ private:
 			Vertex(Vector3f(1.0f, -1.0f, -1.0f), Vector2f(0.5f, 1.0f)),
 			Vertex(Vector3f(0.0f, 1.0f, 0.0f), Vector2f(0.0f, 0.0f))
 		};
-		//vertices[0] = new Vertex(Vector3f(-1.0f, -1.0f, -1.0f), Vector2f(0.0f, 0.0f));
-		//vertices[1] = new Vertex(Vector3f(-1.0f, -1.0f, 1.0f), Vector2f(0.5f, 0.0f));
-		//vertices[2] = new Vertex(Vector3f(1.0f, -1.0f, 1.0f), Vector2f(1.0f, 0.0f));
-		//vertices[3] = new Vertex(Vector3f(1.0f, -1.0f, -1.0f), Vector2f(0.5f, 1.0f));
-		//vertices[4] = new Vertex(Vector3f(0.0f, 1.0f, 0.0f), Vector2f(0.0f, 0.0f));
 
 		glGenBuffers(1, &m_VBO);
 		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-		glDeleteVertexArrays(1, &m_VAO);
 	}
 
 	void CreateIndiceBuffer(){
