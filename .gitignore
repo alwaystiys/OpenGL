@@ -29,7 +29,5 @@ Makefile-Release.mk
 
 *.opensdf
 
-*.lib
-
-*.dll
+*/Debug/*
 */content/*
