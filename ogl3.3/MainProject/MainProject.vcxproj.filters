@@ -13,12 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\Common">
+      <UniqueIdentifier>{f63c02b1-1302-4e39-878e-40746065a77b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Common">
+      <UniqueIdentifier>{57e18fb9-a175-4ab1-9299-7a1716a63e8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\TestModule">
+      <UniqueIdentifier>{0f145bc2-cdaa-4982-98d4-335341dde9a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\TestModule">
+      <UniqueIdentifier>{c2e88f1c-2d88-40c9-8800-b418d251279f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\HellowTriangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\main.cpp">
+    <ClCompile Include="CreateWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\window_backend.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AppTest.cpp">
+      <Filter>源文件\TestModule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AppTriangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,7 +53,16 @@
     <ClInclude Include="..\src\Include\HelloTriangle.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Include\common.h">
+    <ClInclude Include="..\Include\Common\window_backend.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Common\app_callbacks.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\AppTest.h">
+      <Filter>头文件\TestModule</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\AppTriangle.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
