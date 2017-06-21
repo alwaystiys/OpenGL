@@ -66,11 +66,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Common\basic_util.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\AppTriangle.cpp" />
     <ClCompile Include="..\src\HellowTriangle.cpp" />
     <ClCompile Include="..\src\main1.cpp" />
+    <ClCompile Include="..\src\shader_basic.cpp" />
     <ClCompile Include="CreateWindow.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -78,8 +80,14 @@
     <ClInclude Include="..\Include\AppTest.h" />
     <ClInclude Include="..\Include\AppTriangle.h" />
     <ClInclude Include="..\Include\Common\app_callbacks.h" />
+    <ClInclude Include="..\Include\Common\basic_util.h" />
+    <ClInclude Include="..\Include\Common\shader_basic.h" />
     <ClInclude Include="..\Include\Common\window_backend.h" />
     <ClInclude Include="..\src\Include\HelloTriangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Shader\triangle.fs" />
+    <None Include="..\Shader\triangle.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

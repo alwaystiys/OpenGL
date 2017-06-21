@@ -25,6 +25,9 @@
     <Filter Include="头文件\TestModule">
       <UniqueIdentifier>{c2e88f1c-2d88-40c9-8800-b418d251279f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{670ebb85-b853-4238-9927-83c5735ef399}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\HellowTriangle.cpp">
@@ -48,6 +51,12 @@
     <ClCompile Include="..\src\AppTriangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\shader_basic.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\basic_util.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Include\HelloTriangle.h">
@@ -65,5 +74,19 @@
     <ClInclude Include="..\Include\AppTriangle.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Common\shader_basic.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Common\basic_util.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Shader\triangle.vs">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="..\Shader\triangle.fs">
+      <Filter>Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>
