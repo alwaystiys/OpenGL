@@ -28,6 +28,12 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{670ebb85-b853-4238-9927-83c5735ef399}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\AppTriangle">
+      <UniqueIdentifier>{96ad91cb-7208-45c7-8a81-2eae38eb2bf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AppTriangle">
+      <UniqueIdentifier>{676e3f35-e24c-4cfc-92e5-36498d19c8c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\HellowTriangle.cpp">
@@ -48,14 +54,14 @@
     <ClCompile Include="..\src\AppTest.cpp">
       <Filter>源文件\TestModule</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\AppTriangle.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\shader_basic.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\basic_util.cpp">
       <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AppTriangle.cpp">
+      <Filter>源文件\AppTriangle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,14 +77,14 @@
     <ClInclude Include="..\Include\AppTest.h">
       <Filter>头文件\TestModule</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\AppTriangle.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\Common\shader_basic.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\Common\basic_util.h">
       <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\AppTriangle.h">
+      <Filter>头文件\AppTriangle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
