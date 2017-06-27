@@ -8,7 +8,8 @@ int main(int argc, char** argv) {
         return 1;
     }
     //AppTest* app = new AppTest();
-    AppTriangle* app = new AppTriangle();
+    //AppTriangle* app = new AppTriangle();
+    AppIndexTriangle *app = new AppIndexTriangle();
     if(!app->Init()) {
         system("pause");
         return 1;

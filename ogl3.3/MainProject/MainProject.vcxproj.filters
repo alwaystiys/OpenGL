@@ -34,6 +34,9 @@
     <Filter Include="源文件\AppTriangle">
       <UniqueIdentifier>{676e3f35-e24c-4cfc-92e5-36498d19c8c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\TriangleShader">
+      <UniqueIdentifier>{3093521e-b341-4de9-a3f2-8467cbf2a7ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\HellowTriangle.cpp">
@@ -88,11 +91,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Shader\triangle.vs">
-      <Filter>Shader</Filter>
-    </None>
     <None Include="..\Shader\triangle.fs">
-      <Filter>Shader</Filter>
+      <Filter>Shader\TriangleShader</Filter>
+    </None>
+    <None Include="..\Shader\triangle.vs">
+      <Filter>Shader\TriangleShader</Filter>
     </None>
   </ItemGroup>
 </Project>

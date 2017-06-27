@@ -7,9 +7,6 @@
 #include <iostream>
 
 
-
-
-
 class TriangleShader : public ShaderBasic {
 public:
     TriangleShader();
@@ -29,5 +26,17 @@ private:
     TriangleShader* triangleShader;
 };
 
+
+class AppIndexTriangle : public ICallbacks {
+
+public:
+    AppIndexTriangle();
+    ~AppIndexTriangle();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+private:
+    GLuint VBO, VAO, EBO;
+    TriangleShader* triangleShader;
+};
 
 #endif APP_TRIANGLE_H
