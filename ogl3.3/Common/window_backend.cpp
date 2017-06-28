@@ -31,6 +31,7 @@ bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int heig
         std::cout << "Failed to initialize GLEW" << std::endl;
         return false;
     }
+    logGLInfo();
     return true;
 }
 
@@ -56,6 +57,13 @@ void GLFWBackendRun(ICallbacks* pCallbacks) {
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
+}
+
+void logGLInfo() {
+    std::cout << "--------------------GL INFO--------------------------- " << std::endl;
+    GLint nrAttributes;
+    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+    std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
 }
 
 

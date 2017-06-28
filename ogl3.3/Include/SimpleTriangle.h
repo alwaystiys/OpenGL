@@ -1,6 +1,6 @@
 
-#ifndef APP_TRIANGLE_H
-#define APP_TRIANGLE_H
+#ifndef SIMPLE_TRIANGLE_H
+#define SIMPLE_TRIANGLE_H
 
 #include "Common/app_callbacks.h"
 #include "Common/shader_basic.h"
@@ -13,6 +13,8 @@ public:
     virtual bool Init();
 
 };
+
+
 
 
 class AppTriangle : public ICallbacks {
@@ -39,4 +41,4 @@ private:
     TriangleShader* triangleShader;
 };
 
-#endif APP_TRIANGLE_H
+#endif SIMPLE_TRIANGLE_H

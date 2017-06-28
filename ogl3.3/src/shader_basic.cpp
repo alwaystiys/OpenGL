@@ -26,11 +26,15 @@ bool ShaderBasic::Init() {
     return true;
 }
 
-bool ShaderBasic::AddShader(GLenum shaderType, const char* pFilename) {
+bool ShaderBasic::AddShader(GLenum shaderType, const char* pFilename, const char* shaderStr) {
     std::string s;
-    if(!ReadFile(pFilename, s)) {
-        fprintf(stderr, "readFile '%s' error\n", pFilename);
-        return false;
+    if(shaderStr != NULL) {
+        s = shaderStr;
+    } else {
+        if(!ReadFile(pFilename, s)) {
+            fprintf(stderr, "readFile '%s' error\n", pFilename);
+            return false;
+        }
     }
     GLuint shaderObj = glCreateShader(shaderType);
     if(shaderObj == 0) {

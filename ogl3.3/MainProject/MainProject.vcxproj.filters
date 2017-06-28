@@ -63,7 +63,10 @@
     <ClCompile Include="..\Common\basic_util.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\AppTriangle.cpp">
+    <ClCompile Include="..\src\SimpleTriangle.cpp">
+      <Filter>源文件\AppTriangle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ShaderTriangle.cpp">
       <Filter>源文件\AppTriangle</Filter>
     </ClCompile>
   </ItemGroup>
@@ -86,7 +89,13 @@
     <ClInclude Include="..\Include\Common\basic_util.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\AppTriangle.h">
+    <ClInclude Include="..\Include\Common\shader_const.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\SimpleTriangle.h">
+      <Filter>头文件\AppTriangle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ShaderTriangle.h">
       <Filter>头文件\AppTriangle</Filter>
     </ClInclude>
   </ItemGroup>

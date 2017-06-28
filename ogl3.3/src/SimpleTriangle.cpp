@@ -1,4 +1,4 @@
-#include "AppTriangle.h"
+#include "SimpleTriangle.h"
 
 TriangleShader::TriangleShader() {
 }
@@ -7,10 +7,10 @@ bool TriangleShader::Init() {
     if(!ShaderBasic::Init()) {
         return false;
     }
-    if(!AddShader(GL_VERTEX_SHADER, "../Shader/triangle.vs")) {
+    if(!AddShader(GL_VERTEX_SHADER, "../Shader/triangle.vs", NULL)) {
         return false;
     }
-    if(!AddShader(GL_FRAGMENT_SHADER, "../Shader/triangle.fs")) {
+    if(!AddShader(GL_FRAGMENT_SHADER, "../Shader/triangle.fs", NULL)) {
         return false;
     }
     if(!LinkProgram()) {

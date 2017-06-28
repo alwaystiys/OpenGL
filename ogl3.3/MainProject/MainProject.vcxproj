@@ -69,7 +69,8 @@
     <ClCompile Include="..\Common\basic_util.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
-    <ClCompile Include="..\src\AppTriangle.cpp" />
+    <ClCompile Include="..\src\ShaderTriangle.cpp" />
+    <ClCompile Include="..\src\SimpleTriangle.cpp" />
     <ClCompile Include="..\src\HellowTriangle.cpp" />
     <ClCompile Include="..\src\main1.cpp" />
     <ClCompile Include="..\src\shader_basic.cpp" />
@@ -78,9 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
-    <ClInclude Include="..\Include\AppTriangle.h" />
+    <ClInclude Include="..\Include\ShaderTriangle.h" />
+    <ClInclude Include="..\Include\SimpleTriangle.h" />
     <ClInclude Include="..\Include\Common\app_callbacks.h" />
     <ClInclude Include="..\Include\Common\basic_util.h" />
+    <ClInclude Include="..\Include\Common\shader_const.h" />
     <ClInclude Include="..\Include\Common\shader_basic.h" />
     <ClInclude Include="..\Include\Common\window_backend.h" />
     <ClInclude Include="..\src\Include\HelloTriangle.h" />

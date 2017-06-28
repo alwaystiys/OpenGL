@@ -12,7 +12,7 @@ public:
 
     GLuint m_shaderProg;
 protected:
-    bool AddShader(GLenum shaderType, const char* pFilename);
+    bool AddShader(GLenum shaderType, const char* pFilename, const char* shaderStr);
     bool LinkProgram();
 private:
     typedef std::list<GLuint> ShaderObjList;
