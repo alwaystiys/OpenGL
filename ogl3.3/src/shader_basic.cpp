@@ -85,3 +85,19 @@ void ShaderBasic::Enable() {
     glUseProgram(m_shaderProg);
 }
 
+
+void ShaderBasic::setUniform1b(const std::string &name, bool value) const {
+    glUniform1i(glGetUniformLocation(m_shaderProg, name.c_str()), (int)value);
+}
+// ------------------------------------------------------------------------
+void ShaderBasic::setUniform1i(const std::string &name, int value) const {
+    glUniform1i(glGetUniformLocation(m_shaderProg, name.c_str()), value);
+}
+// ------------------------------------------------------------------------
+void ShaderBasic::setUniform1f(const std::string &name, float value) const {
+    glUniform1f(glGetUniformLocation(m_shaderProg, name.c_str()), value);
+}
+
+void ShaderBasic::setUniform4f(const std::string &name, float v0, float v1, float v2, float v3) const {
+    glUniform4f(glGetUniformLocation(m_shaderProg, name.c_str()), v0, v1, v2, v3);
+}

@@ -10,7 +10,9 @@ int main(int argc, char** argv) {
     //AppTest* app = new AppTest();
     //AppTriangle* app = new AppTriangle();
     //AppIndexTriangle *app = new AppIndexTriangle();
-    ShaderTriangle *app = new ShaderTriangle();
+    //ShaderTriangle *app = new ShaderTriangle();
+    //UniformTriangle *app = new UniformTriangle();
+    Uniform2Triangle *app = new Uniform2Triangle();
     if(!app->Init()) {
         system("pause");
         return 1;

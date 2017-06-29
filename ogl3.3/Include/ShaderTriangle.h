@@ -44,9 +44,19 @@ private:
     InnterShader* triangleShader;
 };
 
+//*************************************************
 
+class Uniform2Triangle : public ICallbacks {
 
-
+public:
+    Uniform2Triangle();
+    ~Uniform2Triangle();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+private:
+    GLuint VBO, VAO;
+    InnterShader* triangleShader;
+};
 
 
 
