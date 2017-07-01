@@ -37,6 +37,15 @@
     <Filter Include="Shader\TriangleShader">
       <UniqueIdentifier>{3093521e-b341-4de9-a3f2-8467cbf2a7ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\AppTexture">
+      <UniqueIdentifier>{ff530938-0f66-4734-a973-5de158868e32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AppTexture">
+      <UniqueIdentifier>{05c4dc94-bd8f-4cae-a708-e5892d476e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Texture">
+      <UniqueIdentifier>{50aa6af8-5403-4d8d-94e6-5af020ac6d38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\HellowTriangle.cpp">
@@ -69,6 +78,9 @@
     <ClCompile Include="..\src\ShaderTriangle.cpp">
       <Filter>源文件\AppTriangle</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\TextureTest.cpp">
+      <Filter>源文件\AppTexture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Include\HelloTriangle.h">
@@ -98,6 +110,12 @@
     <ClInclude Include="..\Include\ShaderTriangle.h">
       <Filter>头文件\AppTriangle</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Common\stb_image.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\TextureTest.h">
+      <Filter>头文件\AppTexture</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\triangle.fs">
@@ -105,6 +123,12 @@
     </None>
     <None Include="..\Shader\triangle.vs">
       <Filter>Shader\TriangleShader</Filter>
+    </None>
+    <None Include="..\Shader\simple_texture_test.vs">
+      <Filter>Shader\Texture</Filter>
+    </None>
+    <None Include="..\Shader\simple_texture_test.fs">
+      <Filter>Shader\Texture</Filter>
     </None>
   </ItemGroup>
 </Project>

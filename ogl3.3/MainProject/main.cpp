@@ -2,6 +2,7 @@
 #include "AppTest.h"
 #include "SimpleTriangle.h"
 #include "ShaderTriangle.h"
+#include "TextureTest.h"
 
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600)) {
@@ -12,7 +13,8 @@ int main(int argc, char** argv) {
     //AppIndexTriangle *app = new AppIndexTriangle();
     //ShaderTriangle *app = new ShaderTriangle();
     //UniformTriangle *app = new UniformTriangle();
-    Uniform2Triangle *app = new Uniform2Triangle();
+    //Uniform2Triangle *app = new Uniform2Triangle();
+    SimpleTexture *app = new SimpleTexture();
     if(!app->Init()) {
         system("pause");
         return 1;

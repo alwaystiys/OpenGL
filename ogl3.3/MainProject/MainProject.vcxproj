@@ -74,11 +74,13 @@
     <ClCompile Include="..\src\HellowTriangle.cpp" />
     <ClCompile Include="..\src\main1.cpp" />
     <ClCompile Include="..\src\shader_basic.cpp" />
+    <ClCompile Include="..\src\TextureTest.cpp" />
     <ClCompile Include="CreateWindow.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
+    <ClInclude Include="..\Include\Common\stb_image.h" />
     <ClInclude Include="..\Include\ShaderTriangle.h" />
     <ClInclude Include="..\Include\SimpleTriangle.h" />
     <ClInclude Include="..\Include\Common\app_callbacks.h" />
@@ -86,9 +88,12 @@
     <ClInclude Include="..\Include\Common\shader_const.h" />
     <ClInclude Include="..\Include\Common\shader_basic.h" />
     <ClInclude Include="..\Include\Common\window_backend.h" />
+    <ClInclude Include="..\Include\TextureTest.h" />
     <ClInclude Include="..\src\Include\HelloTriangle.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Shader\simple_texture_test.fs" />
+    <None Include="..\Shader\simple_texture_test.vs" />
     <None Include="..\Shader\triangle.fs" />
     <None Include="..\Shader\triangle.vs" />
   </ItemGroup>
