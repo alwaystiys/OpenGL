@@ -79,6 +79,7 @@
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
     <ClInclude Include="..\Include\Common\lib_texture.h" />
+    <ClInclude Include="..\Include\Common\lib_transform.h" />
     <ClInclude Include="..\Include\Common\stb_image.h" />
     <ClInclude Include="..\Include\ShaderTriangle.h" />
     <ClInclude Include="..\Include\SimpleTriangle.h" />

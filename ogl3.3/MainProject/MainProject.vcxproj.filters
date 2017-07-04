@@ -110,6 +110,9 @@
     <ClInclude Include="..\Include\Common\lib_texture.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Common\lib_transform.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\triangle.fs">
