@@ -48,15 +48,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\HellowTriangle.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CreateWindow.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\main1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -81,11 +72,11 @@
     <ClCompile Include="..\src\TextureTest.cpp">
       <Filter>源文件\AppTexture</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\lib_texture.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Include\HelloTriangle.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="..\Include\Common\window_backend.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
@@ -116,6 +107,9 @@
     <ClInclude Include="..\Include\TextureTest.h">
       <Filter>头文件\AppTexture</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Common\lib_texture.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\triangle.fs">
@@ -128,6 +122,9 @@
       <Filter>Shader\Texture</Filter>
     </None>
     <None Include="..\Shader\simple_texture_test.fs">
+      <Filter>Shader\Texture</Filter>
+    </None>
+    <None Include="..\Shader\multi_texture_test.fs">
       <Filter>Shader\Texture</Filter>
     </None>
   </ItemGroup>

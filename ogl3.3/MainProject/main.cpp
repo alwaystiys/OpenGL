@@ -14,7 +14,8 @@ int main(int argc, char** argv) {
     //ShaderTriangle *app = new ShaderTriangle();
     //UniformTriangle *app = new UniformTriangle();
     //Uniform2Triangle *app = new Uniform2Triangle();
-    SimpleTexture *app = new SimpleTexture();
+    //SimpleTexture *app = new SimpleTexture();
+    MultipleTexture *app = new MultipleTexture();
     if(!app->Init()) {
         system("pause");
         return 1;

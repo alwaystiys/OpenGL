@@ -67,19 +67,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\basic_util.cpp" />
+    <ClCompile Include="..\Common\lib_texture.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\ShaderTriangle.cpp" />
     <ClCompile Include="..\src\SimpleTriangle.cpp" />
-    <ClCompile Include="..\src\HellowTriangle.cpp" />
-    <ClCompile Include="..\src\main1.cpp" />
     <ClCompile Include="..\src\shader_basic.cpp" />
     <ClCompile Include="..\src\TextureTest.cpp" />
-    <ClCompile Include="CreateWindow.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
+    <ClInclude Include="..\Include\Common\lib_texture.h" />
     <ClInclude Include="..\Include\Common\stb_image.h" />
     <ClInclude Include="..\Include\ShaderTriangle.h" />
     <ClInclude Include="..\Include\SimpleTriangle.h" />
@@ -89,9 +88,9 @@
     <ClInclude Include="..\Include\Common\shader_basic.h" />
     <ClInclude Include="..\Include\Common\window_backend.h" />
     <ClInclude Include="..\Include\TextureTest.h" />
-    <ClInclude Include="..\src\Include\HelloTriangle.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Shader\multi_texture_test.fs" />
     <None Include="..\Shader\simple_texture_test.fs" />
     <None Include="..\Shader\simple_texture_test.vs" />
     <None Include="..\Shader\triangle.fs" />
