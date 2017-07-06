@@ -46,6 +46,15 @@
     <Filter Include="Shader\Texture">
       <UniqueIdentifier>{50aa6af8-5403-4d8d-94e6-5af020ac6d38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\AppTransform">
+      <UniqueIdentifier>{7e100fc3-ed52-4000-803f-3f0f2d559ea9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\AppTransform">
+      <UniqueIdentifier>{f43adc51-ec19-45c3-86bb-828c4bd66f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Transform">
+      <UniqueIdentifier>{7812a91d-d13a-44b4-8e0d-1c4ef1ec50ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -73,6 +82,12 @@
       <Filter>源文件\AppTexture</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\lib_texture.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TransformTest.cpp">
+      <Filter>源文件\AppTransform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\lib_transformcpp.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,6 +128,9 @@
     <ClInclude Include="..\Include\Common\lib_transform.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\TransformTest.h">
+      <Filter>头文件\AppTransform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\triangle.fs">
@@ -129,6 +147,9 @@
     </None>
     <None Include="..\Shader\multi_texture_test.fs">
       <Filter>Shader\Texture</Filter>
+    </None>
+    <None Include="..\Shader\multi_texture_transform_test.vs">
+      <Filter>Shader\Transform</Filter>
     </None>
   </ItemGroup>
 </Project>

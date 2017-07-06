@@ -3,6 +3,7 @@
 #include "SimpleTriangle.h"
 #include "ShaderTriangle.h"
 #include "TextureTest.h"
+#include "TransformTest.h"
 
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600)) {
@@ -15,7 +16,8 @@ int main(int argc, char** argv) {
     //UniformTriangle *app = new UniformTriangle();
     //Uniform2Triangle *app = new Uniform2Triangle();
     //SimpleTexture *app = new SimpleTexture();
-    MultipleTexture *app = new MultipleTexture();
+    //MultipleTexture *app = new MultipleTexture();
+    TransformTest::MultipleTexture *app = new TransformTest::MultipleTexture();
     if(!app->Init()) {
         system("pause");
         return 1;
