@@ -20,7 +20,6 @@
 #define	TEXTURE_H
 
 #include <string>
-
 #include <GL/glew.h>
 #include <ImageMagick-6/Magick++.h>
 
