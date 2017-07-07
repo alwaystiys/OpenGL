@@ -85,15 +85,15 @@ bool MultipleTexture::Init() {
     triangleShader->Enable();
     triangleShader->setUniform1i("ourTexture1", 0);
     triangleShader->setUniform1i("ourTexture2", 1);
+    this->texture1->Bind(GL_TEXTURE0);
+    this->texture2->Bind(GL_TEXTURE1);
     return true;
 }
 
 void MultipleTexture::RenderSceneCB() {
     triangleShader->Enable();
-    this->texture1->Bind(GL_TEXTURE0);
-    this->texture2->Bind(GL_TEXTURE1);
     Transform transform;
-    transform.translate(0.5f, -0.5f, 0.0f).rotate((float)glfwGetTime(), 0.0f, 0.0f, 1.0f);
+    transform.translate(0.5f, -0.5f, 0.0f).rotate((float)glfwGetTime(), 0.0f, 0.0f, 1.0f).scale(0.5f, 0.5f, 0.5f);
     triangleShader->setUniformMatrix4fv("transform", transform.getTransformResult());
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

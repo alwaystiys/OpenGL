@@ -4,6 +4,8 @@
 #include "ShaderTriangle.h"
 #include "TextureTest.h"
 #include "TransformTest.h"
+#include "CoordinateTest.h"
+
 
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600)) {
@@ -17,7 +19,8 @@ int main(int argc, char** argv) {
     //Uniform2Triangle *app = new Uniform2Triangle();
     //SimpleTexture *app = new SimpleTexture();
     //MultipleTexture *app = new MultipleTexture();
-    TransformTest::MultipleTexture *app = new TransformTest::MultipleTexture();
+    //TransformTest::MultipleTexture *app = new TransformTest::MultipleTexture();
+    CoordinateTest::MultipleTexture *app = new CoordinateTest::MultipleTexture();
     if(!app->Init()) {
         system("pause");
         return 1;

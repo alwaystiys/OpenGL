@@ -55,6 +55,15 @@
     <Filter Include="Shader\Transform">
       <UniqueIdentifier>{7812a91d-d13a-44b4-8e0d-1c4ef1ec50ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\AppCoordinate">
+      <UniqueIdentifier>{034c53e6-1378-4db4-aba2-abeab2549f63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AppCoordinate">
+      <UniqueIdentifier>{124e9d76-c2dd-45d8-a9af-160e45e65b18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Coordinate">
+      <UniqueIdentifier>{8e90d223-ebfe-434e-ac73-8242b17b9a9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -89,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="..\Common\lib_transform.cpp">
       <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\CoordinateTest.cpp">
+      <Filter>源文件\AppCoordinate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +143,12 @@
     <ClInclude Include="..\Include\TransformTest.h">
       <Filter>头文件\AppTransform</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\CoordinateTest.h">
+      <Filter>头文件\AppCoordinate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Common\lib_math.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\triangle.fs">
@@ -150,6 +168,9 @@
     </None>
     <None Include="..\Shader\multi_texture_transform_test.vs">
       <Filter>Shader\Transform</Filter>
+    </None>
+    <None Include="..\Shader\multi_texture_coordinate_test.vs">
+      <Filter>Shader\Coordinate</Filter>
     </None>
   </ItemGroup>
 </Project>

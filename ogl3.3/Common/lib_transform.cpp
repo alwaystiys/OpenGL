@@ -3,6 +3,10 @@
 Transform::Transform() {
 }
 
+Transform::Transform(glm::mat4 matrix) {
+    transform = matrix;
+}
+
 Transform::~Transform() {
 }
 
@@ -16,8 +20,8 @@ Transform& Transform::rotate(float angle, float x, float y, float z) {
     return *this;
 }
 
-Transform& Transform::scale() {
-    //return this->transform;
+Transform& Transform::scale(float x, float y, float z) {
+    transform = glm::scale(transform, glm::vec3(x, y, z));
     return *this;
 }
 

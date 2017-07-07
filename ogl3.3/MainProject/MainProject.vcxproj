@@ -70,6 +70,7 @@
     <ClCompile Include="..\Common\lib_texture.cpp" />
     <ClCompile Include="..\Common\lib_transform.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
+    <ClCompile Include="..\Include\CoordinateTest.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\ShaderTriangle.cpp" />
     <ClCompile Include="..\src\SimpleTriangle.cpp" />
@@ -80,9 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
+    <ClInclude Include="..\Include\Common\lib_math.h" />
     <ClInclude Include="..\Include\Common\lib_texture.h" />
     <ClInclude Include="..\Include\Common\lib_transform.h" />
     <ClInclude Include="..\Include\Common\stb_image.h" />
+    <ClInclude Include="..\Include\CoordinateTest.h" />
     <ClInclude Include="..\Include\ShaderTriangle.h" />
     <ClInclude Include="..\Include\SimpleTriangle.h" />
     <ClInclude Include="..\Include\Common\app_callbacks.h" />
@@ -94,6 +97,7 @@
     <ClInclude Include="..\Include\TransformTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Shader\multi_texture_coordinate_test.vs" />
     <None Include="..\Shader\multi_texture_test.fs" />
     <None Include="..\Shader\multi_texture_transform_test.vs" />
     <None Include="..\Shader\simple_texture_test.fs" />

@@ -11,10 +11,11 @@ class Transform {
 
 public:
     Transform();
+    Transform(glm::mat4 matrix);
     ~Transform();
     Transform& translate(float x, float y, float z);
     Transform& rotate(float angle, float x, float y, float z);
-    Transform& scale();
+    Transform& scale(float x, float y, float z);
     float* getTransformResult();
 
 private:
