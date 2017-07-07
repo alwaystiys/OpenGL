@@ -1,4 +1,5 @@
 #include "TransformTest.h"
+#include "Common/lib_transform.h"
 #include <iostream>
 
 using namespace TransformTest;
@@ -91,6 +92,9 @@ void MultipleTexture::RenderSceneCB() {
     triangleShader->Enable();
     this->texture1->Bind(GL_TEXTURE0);
     this->texture2->Bind(GL_TEXTURE1);
+    Transform transform;
+    transform.translate(0.5f, -0.5f, 0.0f).rotate((float)glfwGetTime(), 0.0f, 0.0f, 1.0f);
+    triangleShader->setUniformMatrix4fv("transform", transform.getTransformResult());
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 }

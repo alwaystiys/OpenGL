@@ -12,10 +12,10 @@ class Transform {
 public:
     Transform();
     ~Transform();
-    glm::mat4 translate(float x, float y, float z);
-    glm::mat4 rotate(float angle, float x, float y, float z);
-    glm::mat4 scale();
-
+    Transform& translate(float x, float y, float z);
+    Transform& rotate(float angle, float x, float y, float z);
+    Transform& scale();
+    float* getTransformResult();
 
 private:
     glm::mat4 transform;

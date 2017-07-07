@@ -68,7 +68,7 @@
   <ItemGroup>
     <ClCompile Include="..\Common\basic_util.cpp" />
     <ClCompile Include="..\Common\lib_texture.cpp" />
-    <ClCompile Include="..\Common\lib_transformcpp.cpp" />
+    <ClCompile Include="..\Common\lib_transform.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\ShaderTriangle.cpp" />

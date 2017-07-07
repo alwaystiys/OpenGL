@@ -103,5 +103,5 @@ void ShaderBasic::setUniform4f(const std::string &name, float v0, float v1, floa
 }
 
 void ShaderBasic::setUniformMatrix4fv(const std::string &name, float* value) const {
-    glUniformMatrix4fv(glGetUniformLocation(m_shaderProg, name.c_str()), 1, false, value);
+    glUniformMatrix4fv(glGetUniformLocation(m_shaderProg, name.c_str()), 1, GL_FALSE, value);
 }

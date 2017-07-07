@@ -87,7 +87,7 @@
     <ClCompile Include="..\src\TransformTest.cpp">
       <Filter>源文件\AppTransform</Filter>
     </ClCompile>
-    <ClCompile Include="..\Common\lib_transformcpp.cpp">
+    <ClCompile Include="..\Common\lib_transform.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
   </ItemGroup>
