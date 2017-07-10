@@ -70,8 +70,8 @@
     <ClCompile Include="..\Common\lib_texture.cpp" />
     <ClCompile Include="..\Common\lib_transform.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
-    <ClCompile Include="..\Include\CoordinateTest.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
+    <ClCompile Include="..\src\CoordinateTest.cpp" />
     <ClCompile Include="..\src\ShaderTriangle.cpp" />
     <ClCompile Include="..\src\SimpleTriangle.cpp" />
     <ClCompile Include="..\src\shader_basic.cpp" />
@@ -97,6 +97,8 @@
     <ClInclude Include="..\Include\TransformTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Shader\cube.fs" />
+    <None Include="..\Shader\cube.vs" />
     <None Include="..\Shader\multi_texture_coordinate_test.vs" />
     <None Include="..\Shader\multi_texture_test.fs" />
     <None Include="..\Shader\multi_texture_transform_test.vs" />

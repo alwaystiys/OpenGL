@@ -20,7 +20,8 @@ int main(int argc, char** argv) {
     //SimpleTexture *app = new SimpleTexture();
     //MultipleTexture *app = new MultipleTexture();
     //TransformTest::MultipleTexture *app = new TransformTest::MultipleTexture();
-    CoordinateTest::MultipleTexture *app = new CoordinateTest::MultipleTexture();
+    //CoordinateTest::MultipleTexture *app = new CoordinateTest::MultipleTexture();
+    CoordinateTest::CubeTest *app = new CoordinateTest::CubeTest();
     if(!app->Init()) {
         system("pause");
         return 1;

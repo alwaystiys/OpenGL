@@ -99,7 +99,7 @@
     <ClCompile Include="..\Common\lib_transform.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Include\CoordinateTest.cpp">
+    <ClCompile Include="..\src\CoordinateTest.cpp">
       <Filter>源文件\AppCoordinate</Filter>
     </ClCompile>
   </ItemGroup>
@@ -170,6 +170,12 @@
       <Filter>Shader\Transform</Filter>
     </None>
     <None Include="..\Shader\multi_texture_coordinate_test.vs">
+      <Filter>Shader\Coordinate</Filter>
+    </None>
+    <None Include="..\Shader\cube.vs">
+      <Filter>Shader\Coordinate</Filter>
+    </None>
+    <None Include="..\Shader\cube.fs">
       <Filter>Shader\Coordinate</Filter>
     </None>
   </ItemGroup>
