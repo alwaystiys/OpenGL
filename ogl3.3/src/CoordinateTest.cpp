@@ -113,8 +113,8 @@ CubeTest::CubeTest() {
 
 CubeTest::~CubeTest() {
     delete triangleShader;
-    //delete texture1;
-    //delete texture2;
+    delete texture1;
+    delete texture2;
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
     glDeleteBuffers(1, &EBO);
@@ -139,14 +139,16 @@ bool CubeTest::Init() {
     //    -0.5f,  0.5f, -5.0f,   //1.0f, 1.0f, 0.0f,   0.0f, 2.0f  // top left 7
     //};
     GLfloat vertices[] = {
-        -0.5f, -0.5f, -5.0f, //前面的正方形
-        0.5f, -0.5f, -5.0f,
-        0.5f, 0.5f, -5.0f,
-        -0.5f, 0.5f, -5.0f,
-        -0.5f, -0.5f, -10.0f,//背面的正方形
-        0.5f, -0.5f, -10.0f,
-        0.5f, 0.5f, -10.0f,
-        -0.5f, 0.5f, -10.0f
+        //前面的正方形
+        -0.5f, -0.5f, 0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+        0.5f, -0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+        0.5f, 0.5f, 0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+        -0.5f, 0.5f, 0.5f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f,
+        //背面的正方形
+        -0.5f, -0.5f, -0.5f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,
+        0.5f, -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,
+        0.5f, 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
+        -0.5f, 0.5f, -0.5f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f
     };
     //GLfloat indices[] = {
     //    // bottom
@@ -176,8 +178,8 @@ bool CubeTest::Init() {
         3, 2, 6, 7, //上面
         1, 0, 4, 5 //地面
     };
-    //this->texture1 = new Texture("../resources/textures/container.jpg", GL_RGB);
-    //this->texture2 = new Texture("../resources/textures/awesomeface.png", GL_RGBA);
+    this->texture1 = new Texture("../resources/textures/container.jpg", GL_RGB);
+    this->texture2 = new Texture("../resources/textures/awesomeface.png", GL_RGBA);
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
@@ -187,25 +189,25 @@ bool CubeTest::Init() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
     // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    //// color attribute
-    //glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-    //glEnableVertexAttribArray(1);
-    //// texture attribute
-    //glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-    //glEnableVertexAttribArray(2);
-    //this->texture1->Load();
-    //this->texture2->setLoadFlipVertically();
-    //this->texture2->Load();
+    // color attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+    // texture attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+    this->texture1->Load();
+    this->texture2->setLoadFlipVertically();
+    this->texture2->Load();
     glBindVertexArray(0);
     triangleShader->Enable();
-    //triangleShader->setUniform1i("ourTexture1", 0);
-    //triangleShader->setUniform1i("ourTexture2", 1);
-    //this->texture1->Bind(GL_TEXTURE0);
-    //this->texture2->Bind(GL_TEXTURE1);
+    triangleShader->setUniform1i("ourTexture1", 0);
+    triangleShader->setUniform1i("ourTexture2", 1);
+    this->texture1->Bind(GL_TEXTURE0);
+    this->texture2->Bind(GL_TEXTURE1);
     Transform model, view;
-    model = model.rotate(libmath::toRadians(-30.0f), 0.5f, 1.0f, 0.0f);
+    model = model.rotate(-10.0f, 0.0f, 1.0f, 0.0f);
     view = view.translate(0.0f, 0.0f, -3.0f);
     Transform projection(libmath::genPerspective(libmath::toRadians(45.0f), (float) 800 / 600, 1.0f, 100.0f));
     triangleShader->setUniformMatrix4fv("model", model.getTransformResult());
@@ -217,7 +219,6 @@ bool CubeTest::Init() {
 void CubeTest::RenderSceneCB() {
     triangleShader->Enable();
     glBindVertexArray(VAO);
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glDrawElements(GL_QUADS, 24, GL_UNSIGNED_INT, 0);
-    //glDrawElements(GL_TRIANGLES, 24, GL_UNSIGNED_INT, 0);
 }
