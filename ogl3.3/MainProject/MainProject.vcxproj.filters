@@ -172,10 +172,16 @@
     <None Include="..\Shader\multi_texture_coordinate_test.vs">
       <Filter>Shader\Coordinate</Filter>
     </None>
-    <None Include="..\Shader\cube.vs">
+    <None Include="..\Shader\cube_with_color.fs">
       <Filter>Shader\Coordinate</Filter>
     </None>
-    <None Include="..\Shader\cube.fs">
+    <None Include="..\Shader\cube_with_color.vs">
+      <Filter>Shader\Coordinate</Filter>
+    </None>
+    <None Include="..\Shader\cube_no_color.vs">
+      <Filter>Shader\Coordinate</Filter>
+    </None>
+    <None Include="..\Shader\cube_no_color.fs">
       <Filter>Shader\Coordinate</Filter>
     </None>
   </ItemGroup>

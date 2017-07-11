@@ -97,8 +97,10 @@
     <ClInclude Include="..\Include\TransformTest.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Shader\cube.fs" />
-    <None Include="..\Shader\cube.vs" />
+    <None Include="..\Shader\cube_no_color.fs" />
+    <None Include="..\Shader\cube_no_color.vs" />
+    <None Include="..\Shader\cube_with_color.fs" />
+    <None Include="..\Shader\cube_with_color.vs" />
     <None Include="..\Shader\multi_texture_coordinate_test.vs" />
     <None Include="..\Shader\multi_texture_test.fs" />
     <None Include="..\Shader\multi_texture_transform_test.vs" />

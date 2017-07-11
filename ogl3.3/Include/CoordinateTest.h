@@ -32,6 +32,19 @@ private:
     TextureShader* triangleShader;
 };
 
+class CubeIndiceTest : public ICallbacks {
+
+public:
+    CubeIndiceTest();
+    ~CubeIndiceTest();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+private:
+    GLuint VBO, VAO, EBO;
+    Texture *texture1, *texture2;
+    TextureShader* triangleShader;
+};
+
 class CubeTest : public ICallbacks {
 
 public:
@@ -40,7 +53,7 @@ public:
     virtual bool Init();
     virtual void RenderSceneCB();
 private:
-    GLuint VBO, VAO, EBO;
+    GLuint VBO, VAO;
     Texture *texture1, *texture2;
     TextureShader* triangleShader;
 };
