@@ -2,9 +2,7 @@
 #ifndef LIB_TRANSFORM_H
 #define LIB_TRANSFORM_H
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
+#include "Common/lib_math.h"
 
 
 class Transform {

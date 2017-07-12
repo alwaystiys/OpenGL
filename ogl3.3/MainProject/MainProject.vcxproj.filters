@@ -102,6 +102,9 @@
     <ClCompile Include="..\src\CoordinateTest.cpp">
       <Filter>源文件\AppCoordinate</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\lib_math.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\Common\window_backend.h">

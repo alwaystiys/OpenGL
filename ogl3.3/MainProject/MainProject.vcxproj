@@ -67,6 +67,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\basic_util.cpp" />
+    <ClCompile Include="..\Common\lib_math.cpp" />
     <ClCompile Include="..\Common\lib_texture.cpp" />
     <ClCompile Include="..\Common\lib_transform.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />

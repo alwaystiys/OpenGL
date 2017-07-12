@@ -21,7 +21,8 @@ int main(int argc, char** argv) {
     //MultipleTexture *app = new MultipleTexture();
     //TransformTest::MultipleTexture *app = new TransformTest::MultipleTexture();
     //CoordinateTest::MultipleTexture *app = new CoordinateTest::MultipleTexture();
-    CoordinateTest::CubeTest *app = new CoordinateTest::CubeTest();
+    //CoordinateTest::CubeTest *app = new CoordinateTest::CubeTest();
+    CoordinateTest::MutitudeCubeTest *app = new CoordinateTest::MutitudeCubeTest();
     if(!app->Init()) {
         system("pause");
         return 1;

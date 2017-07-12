@@ -5,6 +5,7 @@
 #include "Common/app_callbacks.h"
 #include "Common/lib_texture.h"
 #include "Common/shader_basic.h"
+#include "Common/lib_math.h"
 
 namespace CoordinateTest {
 
@@ -58,6 +59,21 @@ private:
     TextureShader* triangleShader;
 };
 
+class MutitudeCubeTest : public ICallbacks {
+
+public:
+    MutitudeCubeTest();
+    ~MutitudeCubeTest();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+private:
+    vec3 cubePositions[10];
+    GLuint VBO, VAO;
+    Texture *texture1, *texture2;
+    TextureShader* triangleShader;
+};
+
 }
+
 
 #endif COORDINATE_TEST_H
