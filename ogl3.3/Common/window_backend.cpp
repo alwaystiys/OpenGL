@@ -2,11 +2,13 @@
 
 static ICallbacks* s_pCallbacks = NULL;
 static GLFWwindow* window = NULL;
+static float deltaTime = 0.0f;
+static float lastFrame = 0.0f;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
-bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int height) {
+bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int height, bool isHideCursor) {
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();
@@ -23,6 +25,9 @@ bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int heig
         return false;
     }
     glfwMakeContextCurrent(window);
+    if(isHideCursor) {
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    }
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     // ---------------------------------------
     // Initialize GLEW to setup the OpenGL Function pointers
@@ -45,6 +50,9 @@ void GLFWBackendRun(ICallbacks* pCallbacks) {
     // render loop
     // -----------
     while(!glfwWindowShouldClose(window)) {
+        float currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
         // input
         // -----
         processInput(window);
@@ -72,12 +80,17 @@ void GLFWBackenShutDown() {
     glfwTerminate();
 }
 
+bool isKeyPress(int key) {
+    return glfwGetKey(window, key) == GLFW_PRESS;
+}
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow *window) {
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    s_pCallbacks->ProcessInput(isKeyPress, deltaTime);
+    if(isKeyPress(GLFW_KEY_ESCAPE)) {
         glfwSetWindowShouldClose(window, true);
+    }
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes

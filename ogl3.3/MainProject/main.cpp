@@ -5,7 +5,7 @@
 #include "TextureTest.h"
 #include "TransformTest.h"
 #include "CoordinateTest.h"
-
+#include "CameraTest.h"
 
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600)) {
@@ -22,7 +22,9 @@ int main(int argc, char** argv) {
     //TransformTest::MultipleTexture *app = new TransformTest::MultipleTexture();
     //CoordinateTest::MultipleTexture *app = new CoordinateTest::MultipleTexture();
     //CoordinateTest::CubeTest *app = new CoordinateTest::CubeTest();
-    CoordinateTest::MutitudeCubeTest *app = new CoordinateTest::MutitudeCubeTest();
+    //CoordinateTest::MutitudeCubeTest *app = new CoordinateTest::MutitudeCubeTest();
+    //CameraTest::MutitudeCubeTest *app = new CameraTest::MutitudeCubeTest();
+    CameraTest::FPSTest *app = new CameraTest::FPSTest();
     if(!app->Init()) {
         system("pause");
         return 1;

@@ -9,7 +9,7 @@
 #include <GLFW/glfw3.h>
 #include "Common/app_callbacks.h"
 
-bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int height);
+bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int height, bool isHideCursor = false);
 void GLFWBackendRun(ICallbacks* pCallbacks);
 void GLFWBackenShutDown();
 

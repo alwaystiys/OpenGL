@@ -8,11 +8,12 @@
 
 /************************************************************************/
 /*
-1、封装了glm，避免程序到处包含该头文件
+1、封装了glm
 2、常用的数学操作
 */
 /************************************************************************/
 typedef glm::vec3 vec3;
+typedef glm::mat4 mat4;
 
 namespace libmath {
 
@@ -21,6 +22,9 @@ template<typename T> glm::mat4 genPerspective(T fovy, T aspect, T near, T far) {
     return glm::perspective(fovy, aspect, near, far);
 }
 
+mat4 genLookAtMatrix(vec3, vec3, vec3);
+vec3 cross(vec3, vec3);
+vec3 normalize(vec3);
 }
 
 

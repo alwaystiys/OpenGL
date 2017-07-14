@@ -64,6 +64,12 @@
     <Filter Include="Shader\Coordinate">
       <UniqueIdentifier>{8e90d223-ebfe-434e-ac73-8242b17b9a9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\AppCamera">
+      <UniqueIdentifier>{06a7b3aa-95bf-4be3-9c14-22e21e40e102}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AppCamera">
+      <UniqueIdentifier>{2f34333e-854b-4102-8a25-e83127c19121}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -104,6 +110,9 @@
     </ClCompile>
     <ClCompile Include="..\Common\lib_math.cpp">
       <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CameraTest.cpp">
+      <Filter>源文件\AppCamera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\Common\lib_math.h">
       <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\CameraTest.h">
+      <Filter>头文件\AppCamera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

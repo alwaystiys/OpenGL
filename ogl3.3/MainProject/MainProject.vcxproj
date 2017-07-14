@@ -72,6 +72,7 @@
     <ClCompile Include="..\Common\lib_transform.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
+    <ClCompile Include="..\src\CameraTest.cpp" />
     <ClCompile Include="..\src\CoordinateTest.cpp" />
     <ClCompile Include="..\src\ShaderTriangle.cpp" />
     <ClCompile Include="..\src\SimpleTriangle.cpp" />
@@ -82,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
+    <ClInclude Include="..\Include\CameraTest.h" />
     <ClInclude Include="..\Include\Common\lib_math.h" />
     <ClInclude Include="..\Include\Common\lib_texture.h" />
     <ClInclude Include="..\Include\Common\lib_transform.h" />

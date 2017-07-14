@@ -9,7 +9,7 @@ class Transform {
 
 public:
     Transform();
-    Transform(glm::mat4 matrix);
+    Transform(mat4 matrix);
     ~Transform();
     Transform& translate(float x, float y, float z);
     Transform& rotate(float angle, float x, float y, float z);
@@ -17,7 +17,7 @@ public:
     float* getTransformResult();
 
 private:
-    glm::mat4 transform;
+    mat4 transform;
 
 
 };
