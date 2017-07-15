@@ -67,6 +67,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Common\basic_util.cpp" />
+    <ClCompile Include="..\Common\lib_camera.cpp" />
     <ClCompile Include="..\Common\lib_math.cpp" />
     <ClCompile Include="..\Common\lib_texture.cpp" />
     <ClCompile Include="..\Common\lib_transform.cpp" />
@@ -84,6 +85,7 @@
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
     <ClInclude Include="..\Include\CameraTest.h" />
+    <ClInclude Include="..\Include\Common\lib_camera.h" />
     <ClInclude Include="..\Include\Common\lib_math.h" />
     <ClInclude Include="..\Include\Common\lib_texture.h" />
     <ClInclude Include="..\Include\Common\lib_transform.h" />

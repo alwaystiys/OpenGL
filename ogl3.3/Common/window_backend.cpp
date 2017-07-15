@@ -5,9 +5,6 @@ static GLFWwindow* window = NULL;
 static float deltaTime = 0.0f;
 static float lastFrame = 0.0f;
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
-
 bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int height, bool isHideCursor) {
     // glfw: initialize and configure
     // ------------------------------
@@ -29,6 +26,8 @@ bool GLFWBackendCreateWindow(char* pTitle, unsigned int width, unsigned int heig
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     }
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
     // ---------------------------------------
     // Initialize GLEW to setup the OpenGL Function pointers
     glewExperimental = GL_TRUE;
@@ -99,4 +98,11 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     // make sure the viewport matches the new window dimensions; note that width and
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
+}
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+    s_pCallbacks->PorcessMouseInput(deltaTime, xpos, ypos);
+}
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+    s_pCallbacks->PorcessScrollInput(deltaTime, xoffset, yoffset);
 }

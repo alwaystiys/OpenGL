@@ -5,6 +5,7 @@
 #include "Common/lib_texture.h"
 #include "Common/shader_basic.h"
 #include "Common/lib_math.h"
+#include "Common/lib_camera.h"
 
 namespace CameraTest {
 
@@ -41,6 +42,8 @@ public:
     virtual bool Init();
     virtual void RenderSceneCB();
     virtual void ProcessInput(KEY_PRESS, float);
+    virtual void PorcessMouseInput(float, double, double);
+    virtual void PorcessScrollInput(float, double, double);
 private:
     vec3 cubePositions[10];
     vec3 cameraPos;
@@ -49,6 +52,32 @@ private:
     GLuint VBO, VAO;
     Texture *texture1, *texture2;
     TextureShader* triangleShader;
+    bool firstMouse;
+    float yaw;
+    float pitch;
+    float lastX;
+    float lastY;
+    float fov;
+};
+
+class FPS2Test : public ICallbacks {
+
+public:
+    FPS2Test();
+    ~FPS2Test();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+    virtual void ProcessInput(KEY_PRESS, float);
+    virtual void PorcessMouseInput(float, double, double);
+    virtual void PorcessScrollInput(float, double, double);
+
+private:
+    vec3 cubePositions[10];
+    Camera camera;
+    GLuint VBO, VAO;
+    Texture *texture1, *texture2;
+    TextureShader* triangleShader;
+
 };
 
 }

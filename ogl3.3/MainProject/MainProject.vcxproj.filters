@@ -114,6 +114,9 @@
     <ClCompile Include="..\src\CameraTest.cpp">
       <Filter>源文件\AppCamera</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\lib_camera.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\Common\window_backend.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\CameraTest.h">
       <Filter>头文件\AppCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Common\lib_camera.h">
+      <Filter>头文件\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

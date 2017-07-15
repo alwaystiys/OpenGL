@@ -8,7 +8,7 @@
 #include "CameraTest.h"
 
 int main(int argc, char** argv) {
-    if(!GLFWBackendCreateWindow("TestDemo", 800, 600)) {
+    if(!GLFWBackendCreateWindow("TestDemo", 800, 600, true)) {
         return 1;
     }
     //AppTest* app = new AppTest();
@@ -24,7 +24,8 @@ int main(int argc, char** argv) {
     //CoordinateTest::CubeTest *app = new CoordinateTest::CubeTest();
     //CoordinateTest::MutitudeCubeTest *app = new CoordinateTest::MutitudeCubeTest();
     //CameraTest::MutitudeCubeTest *app = new CameraTest::MutitudeCubeTest();
-    CameraTest::FPSTest *app = new CameraTest::FPSTest();
+    //CameraTest::FPSTest *app = new CameraTest::FPSTest();
+    CameraTest::FPS2Test *app = new CameraTest::FPS2Test();
     if(!app->Init()) {
         system("pause");
         return 1;

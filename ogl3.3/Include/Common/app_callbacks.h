@@ -11,6 +11,9 @@ public:
     };
     virtual void RenderSceneCB() {};
     virtual void ProcessInput(KEY_PRESS, float) {};
+    virtual void PorcessMouseInput(float, double, double) {};
+    virtual void PorcessScrollInput(float, double, double) {};
+
 };
 
 
