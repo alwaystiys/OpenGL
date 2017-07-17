@@ -70,6 +70,15 @@
     <Filter Include="源文件\AppCamera">
       <UniqueIdentifier>{2f34333e-854b-4102-8a25-e83127c19121}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\AppColor">
+      <UniqueIdentifier>{221e2f35-9b90-4c94-a4ce-124cf0679306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AppColor">
+      <UniqueIdentifier>{45ed9dbb-4eab-4d3b-9230-7046cd20d55b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Light">
+      <UniqueIdentifier>{1e659281-3871-4493-a7a7-746699490dcd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -116,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="..\Common\lib_camera.cpp">
       <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ColorTest.cpp">
+      <Filter>源文件\AppColor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +182,9 @@
     <ClInclude Include="..\Include\Common\lib_camera.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\ColorTest.h">
+      <Filter>头文件\AppColor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\triangle.fs">
@@ -204,6 +219,18 @@
     </None>
     <None Include="..\Shader\cube_no_color.fs">
       <Filter>Shader\Coordinate</Filter>
+    </None>
+    <None Include="..\Shader\light_cube_01.vs">
+      <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\light_cube_01.fs">
+      <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\light_lamb_01.vs">
+      <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\light_lamb_01.fs">
+      <Filter>Shader\Light</Filter>
     </None>
   </ItemGroup>
 </Project>

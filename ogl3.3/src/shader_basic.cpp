@@ -98,10 +98,17 @@ void ShaderBasic::setUniform1f(const std::string &name, float value) const {
     glUniform1f(glGetUniformLocation(m_shaderProg, name.c_str()), value);
 }
 
+// ------------------------------------------------------------------------
+void ShaderBasic::setUniform3f(const std::string &name, float v0, float v1, float v2) const {
+    glUniform3f(glGetUniformLocation(m_shaderProg, name.c_str()), v0, v1, v2);
+}
+
+// ------------------------------------------------------------------------
 void ShaderBasic::setUniform4f(const std::string &name, float v0, float v1, float v2, float v3) const {
     glUniform4f(glGetUniformLocation(m_shaderProg, name.c_str()), v0, v1, v2, v3);
 }
 
+// ------------------------------------------------------------------------
 void ShaderBasic::setUniformMatrix4fv(const std::string &name, float* value) const {
     glUniformMatrix4fv(glGetUniformLocation(m_shaderProg, name.c_str()), 1, GL_FALSE, value);
 }

@@ -337,7 +337,7 @@ void FPSTest::PorcessScrollInput(float deltatime, double xoffset, double yoffset
 
 //**************************************************
 
-FPS2Test::FPS2Test() : camera(vec3(0.0f, 0.0f, 0.3f)) {
+FPS2Test::FPS2Test() : camera(vec3(0.0f, 0.0f, 3.0f)) {
     triangleShader = NULL;
 }
 
@@ -452,7 +452,7 @@ void FPS2Test::RenderSceneCB() {
         triangleShader->setUniformMatrix4fv("model", model.getTransformResult());
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+    //glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
 

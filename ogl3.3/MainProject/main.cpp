@@ -6,6 +6,7 @@
 #include "TransformTest.h"
 #include "CoordinateTest.h"
 #include "CameraTest.h"
+#include "ColorTest.h"
 
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600, true)) {
@@ -25,7 +26,8 @@ int main(int argc, char** argv) {
     //CoordinateTest::MutitudeCubeTest *app = new CoordinateTest::MutitudeCubeTest();
     //CameraTest::MutitudeCubeTest *app = new CameraTest::MutitudeCubeTest();
     //CameraTest::FPSTest *app = new CameraTest::FPSTest();
-    CameraTest::FPS2Test *app = new CameraTest::FPS2Test();
+    //CameraTest::FPS2Test *app = new CameraTest::FPS2Test();
+    ColorTest::FPS2Test *app = new ColorTest::FPS2Test();
     if(!app->Init()) {
         system("pause");
         return 1;

@@ -74,6 +74,7 @@
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\CameraTest.cpp" />
+    <ClCompile Include="..\src\ColorTest.cpp" />
     <ClCompile Include="..\src\CoordinateTest.cpp" />
     <ClCompile Include="..\src\ShaderTriangle.cpp" />
     <ClCompile Include="..\src\SimpleTriangle.cpp" />
@@ -85,6 +86,7 @@
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
     <ClInclude Include="..\Include\CameraTest.h" />
+    <ClInclude Include="..\Include\ColorTest.h" />
     <ClInclude Include="..\Include\Common\lib_camera.h" />
     <ClInclude Include="..\Include\Common\lib_math.h" />
     <ClInclude Include="..\Include\Common\lib_texture.h" />
@@ -102,10 +104,14 @@
     <ClInclude Include="..\Include\TransformTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Shader\light_cube_01.fs" />
+    <None Include="..\Shader\light_cube_01.vs" />
     <None Include="..\Shader\cube_no_color.fs" />
     <None Include="..\Shader\cube_no_color.vs" />
     <None Include="..\Shader\cube_with_color.fs" />
     <None Include="..\Shader\cube_with_color.vs" />
+    <None Include="..\Shader\light_lamb_01.fs" />
+    <None Include="..\Shader\light_lamb_01.vs" />
     <None Include="..\Shader\multi_texture_coordinate_test.vs" />
     <None Include="..\Shader\multi_texture_test.fs" />
     <None Include="..\Shader\multi_texture_transform_test.vs" />

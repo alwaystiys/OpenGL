@@ -14,6 +14,8 @@ public:
     void setUniform1b(const std::string &name, bool value) const;
     void setUniform1i(const std::string &name, int value) const;
     void setUniform1f(const std::string &name, float value) const;
+
+    void setUniform3f(const std::string &name, float v0, float v1, float v2) const;
     void setUniform4f(const std::string &name, float v0, float v1, float v2, float v3) const;
     void setUniformMatrix4fv(const std::string &name, float* value) const;
     GLuint m_shaderProg;
