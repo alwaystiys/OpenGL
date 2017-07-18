@@ -7,7 +7,7 @@
 #include "Common/lib_math.h"
 #include "Common/lib_camera.h"
 
-namespace ColorTest {
+namespace LightTest {
 
 class TextureShader : public ShaderBasic {
 public:
@@ -25,6 +25,24 @@ class FPS2Test : public ICallbacks {
 public:
     FPS2Test();
     ~FPS2Test();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+    virtual void ProcessInput(KEY_PRESS, float);
+    virtual void PorcessMouseInput(float, double, double);
+    virtual void PorcessScrollInput(float, double, double);
+
+private:
+    Camera camera;
+    GLuint VBO, cubeVAO, lightVAO;
+    TextureShader *lightingShader, *lambShader;
+
+};
+
+class BasicLightTest : public ICallbacks {
+
+public:
+    BasicLightTest();
+    ~BasicLightTest();
     virtual bool Init();
     virtual void RenderSceneCB();
     virtual void ProcessInput(KEY_PRESS, float);
