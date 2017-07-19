@@ -160,7 +160,7 @@ void FPS2Test::PorcessScrollInput(float delta, double xoffset, double yoffset) {
 //**************************************************
 
 BasicLightTest::BasicLightTest() :
-    camera(vec3(0.0f, 0.0f, 3.0f)) {
+    camera(vec3(0.0f, 0.0f, 5.0f)), lightPos(1.2f, 1.0f, 2.0f) {
     lightingShader = NULL;
     lambShader = NULL;
 }
@@ -174,7 +174,8 @@ BasicLightTest::~BasicLightTest() {
 }
 
 bool BasicLightTest::Init() {
-    lightingShader = new TextureShader(NULL, NULL, "../Shader/light_cube_02.vs", "../Shader/light_cube_02.fs");
+    lightingShader = new TextureShader(NULL, NULL, "../Shader/light_gouraud_cube_02.vs", "../Shader/light_gouraud_cube_02.fs");
+    //lightingShader = new TextureShader(NULL, NULL, "../Shader/light_cube_02.vs", "../Shader/light_cube_02.fs");
     if(!lightingShader->Init()) {
         return false;
     }
@@ -190,12 +191,12 @@ bool BasicLightTest::Init() {
         -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
         -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
 
-        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-        0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-        0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-        0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+        0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+        0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+        0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
 
         -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
         -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
@@ -245,11 +246,12 @@ bool BasicLightTest::Init() {
     lightingShader->Enable();
     lightingShader->setUniform3f("objectColor", 1.0f, 0.5f, 0.31f);
     lightingShader->setUniform3f("lightColor",  1.0f, 1.0f, 1.0f);
-    lightingShader->setUniform3f("lightPos", 1.2f, 1.0f, 2.0f);
     return true;
 }
 
 void BasicLightTest::RenderSceneCB() {
+    //lightPos.x = 1.0f + sin(glfwGetTime()) * 2.0f;
+    //lightPos.y = sin(glfwGetTime() / 2.0f) * 1.0f;
     lightingShader->Enable();
     Transform model;
     lightingShader->setUniformMatrix4fv("model", model.getTransformResult());
@@ -257,12 +259,14 @@ void BasicLightTest::RenderSceneCB() {
     lightingShader->setUniformMatrix4fv("view", view.getTransformResult());
     Transform projection(libmath::genPerspective(libmath::toRadians(camera.zoom), (float) 800 / 600, 1.0f, 100.0f));
     lightingShader->setUniformMatrix4fv("projection", projection.getTransformResult());
+    lightingShader->setUniform3f("viewPos", camera.position.x, camera.position.y, camera.position.z);
+    lightingShader->setUniformVec3f("lightPos", lightPos);
     glBindVertexArray(cubeVAO);
     glDrawArrays(GL_TRIANGLES, 0, 36);
     lambShader->Enable();
     lambShader->setUniformMatrix4fv("view", view.getTransformResult());
     lambShader->setUniformMatrix4fv("projection", projection.getTransformResult());
-    model.translate(1.2f, 1.0f, 2.0f).scale(0.2f, 0.2f, 0.2f);
+    model.translate(lightPos.x, lightPos.y, lightPos.z).scale(0.2f, 0.2f, 0.2f);
     lambShader->setUniformMatrix4fv("model", model.getTransformResult());
     glBindVertexArray(lightVAO);
     glDrawArrays(GL_TRIANGLES, 0, 36);

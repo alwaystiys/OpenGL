@@ -52,6 +52,7 @@ public:
 private:
     Camera camera;
     GLuint VBO, cubeVAO, lightVAO;
+    vec3 lightPos;
     TextureShader *lightingShader, *lambShader;
 
 };

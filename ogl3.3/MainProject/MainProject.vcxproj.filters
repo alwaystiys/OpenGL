@@ -238,5 +238,11 @@
     <None Include="..\Shader\light_cube_02.vs">
       <Filter>Shader\Light</Filter>
     </None>
+    <None Include="..\Shader\light_gouraud_cube_02.vs">
+      <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\light_gouraud_cube_02.fs">
+      <Filter>Shader\Light</Filter>
+    </None>
   </ItemGroup>
 </Project>
