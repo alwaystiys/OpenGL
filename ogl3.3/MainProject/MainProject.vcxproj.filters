@@ -244,5 +244,11 @@
     <None Include="..\Shader\light_gouraud_cube_02.fs">
       <Filter>Shader\Light</Filter>
     </None>
+    <None Include="..\Shader\light_material_cube.vs">
+      <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\light_material_cube.fs">
+      <Filter>Shader\Light</Filter>
+    </None>
   </ItemGroup>
 </Project>

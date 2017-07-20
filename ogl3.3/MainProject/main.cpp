@@ -28,7 +28,8 @@ int main(int argc, char** argv) {
     //CameraTest::FPSTest *app = new CameraTest::FPSTest();
     //CameraTest::FPS2Test *app = new CameraTest::FPS2Test();
     //LightTest::FPS2Test *app = new LightTest::FPS2Test();
-    LightTest::BasicLightTest *app = new LightTest::BasicLightTest();
+    //LightTest::BasicLightTest *app = new LightTest::BasicLightTest();
+    LightTest::MaterialTest *app = new LightTest::MaterialTest();
     if(!app->Init()) {
         system("pause");
         return 1;

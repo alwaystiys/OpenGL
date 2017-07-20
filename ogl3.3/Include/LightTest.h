@@ -56,6 +56,25 @@ private:
     TextureShader *lightingShader, *lambShader;
 
 };
+
+class MaterialTest : public ICallbacks {
+
+public:
+    MaterialTest();
+    ~MaterialTest();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+    virtual void ProcessInput(KEY_PRESS, float);
+    virtual void PorcessMouseInput(float, double, double);
+    virtual void PorcessScrollInput(float, double, double);
+
+private:
+    Camera camera;
+    GLuint VBO, cubeVAO, lightVAO;
+    vec3 lightPos;
+    TextureShader *lightingShader, *lambShader;
+
+};
 }
 
 #endif COLOR_TEST_H
