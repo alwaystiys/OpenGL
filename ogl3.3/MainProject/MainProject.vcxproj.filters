@@ -79,6 +79,9 @@
     <Filter Include="源文件\AppLight">
       <UniqueIdentifier>{45ed9dbb-4eab-4d3b-9230-7046cd20d55b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\Light\LightMaps">
+      <UniqueIdentifier>{751d956c-084f-494c-ac0e-37dac96ae219}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -127,6 +130,9 @@
       <Filter>源文件\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\src\LightTest.cpp">
+      <Filter>源文件\AppLight</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LightingMaps.cpp">
       <Filter>源文件\AppLight</Filter>
     </ClCompile>
   </ItemGroup>
@@ -183,6 +189,9 @@
       <Filter>头文件\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\LightTest.h">
+      <Filter>头文件\AppLight</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\LightingMaps.h">
       <Filter>头文件\AppLight</Filter>
     </ClInclude>
   </ItemGroup>
@@ -249,6 +258,12 @@
     </None>
     <None Include="..\Shader\light_material_cube.fs">
       <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\lightmaps_cube.vs">
+      <Filter>Shader\Light\LightMaps</Filter>
+    </None>
+    <None Include="..\Shader\lightmaps_cube.fs">
+      <Filter>Shader\Light\LightMaps</Filter>
     </None>
   </ItemGroup>
 </Project>
