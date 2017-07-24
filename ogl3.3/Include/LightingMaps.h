@@ -37,7 +37,7 @@ private:
     GLuint VBO, cubeVAO, lightVAO;
     vec3 lightPos;
     TextureShader *lightingShader, *lambShader;
-    Texture *diffuseMap, *specularMap;
+    Texture *diffuseMap, *specularMap, *emissionMap;
 };
 }
 

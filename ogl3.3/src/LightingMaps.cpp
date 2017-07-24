@@ -97,7 +97,8 @@ bool MaterialTest::Init() {
         -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f,  1.0f
     };
     diffuseMap = new Texture("../resources/textures/container2.png", GL_RGBA);
-    specularMap = new Texture("../resources/textures/container2_specular.png", GL_RGBA);
+    specularMap = new Texture("../resources/textures/lighting_maps_specular_color.png", GL_RGBA);
+    emissionMap = new Texture("../resources/textures/matrix.jpg", GL_RGB);
     // init cubeVAO
     glGenVertexArrays(1, &cubeVAO);
     glGenBuffers(1, &VBO);
@@ -112,6 +113,7 @@ bool MaterialTest::Init() {
     glEnableVertexAttribArray(2);
     diffuseMap->Load();
     specularMap->Load();
+    emissionMap->Load();
     glBindVertexArray(0);
     // inti lightVAO
     glGenVertexArrays(1, &lightVAO);
@@ -124,7 +126,7 @@ bool MaterialTest::Init() {
     lightingShader->setUniform3f("lightColor",  1.0f, 1.0f, 1.0f);
     lightingShader->setUniform1i("diffuse", 0);
     lightingShader->setUniform1i("specular", 1);
-    //lightingShader->setUniform3f("material.specular", 0.5f, 0.5f, 0.5f);
+    lightingShader->setUniform1i("emission", 2);
     lightingShader->setUniform1f("material.shininess", 32.0f);
     lightingShader->setUniform3f("light.ambient",  0.2f, 0.2f, 0.2f);
     lightingShader->setUniform3f("light.diffuse",  0.5f, 0.5f, 0.5f); // 将光照调暗了一些以搭配场景
@@ -138,6 +140,7 @@ void MaterialTest::RenderSceneCB() {
     lightingShader->Enable();
     diffuseMap->Bind(GL_TEXTURE0);
     specularMap->Bind(GL_TEXTURE1);
+    emissionMap->Bind(GL_TEXTURE2);
     Transform model;
     lightingShader->setUniformMatrix4fv("model", model.getTransformResult());
     Transform view(camera.GetViewMatrix());
