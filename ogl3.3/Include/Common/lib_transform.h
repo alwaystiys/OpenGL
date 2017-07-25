@@ -11,6 +11,7 @@ public:
     Transform();
     Transform(mat4 matrix);
     ~Transform();
+    Transform& translate(vec3);
     Transform& translate(float x, float y, float z);
     Transform& rotate(float angle, float x, float y, float z);
     Transform& scale(float x, float y, float z);

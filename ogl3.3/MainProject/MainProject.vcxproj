@@ -74,6 +74,7 @@
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\CameraTest.cpp" />
+    <ClCompile Include="..\src\LightCaster.cpp" />
     <ClCompile Include="..\src\LightingMaps.cpp" />
     <ClCompile Include="..\src\LightTest.cpp" />
     <ClCompile Include="..\src\CoordinateTest.cpp" />
@@ -87,6 +88,7 @@
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
     <ClInclude Include="..\Include\CameraTest.h" />
+    <ClInclude Include="..\Include\LightCaster.h" />
     <ClInclude Include="..\Include\LightingMaps.h" />
     <ClInclude Include="..\Include\LightTest.h" />
     <ClInclude Include="..\Include\Common\lib_camera.h" />
@@ -108,6 +110,8 @@
   <ItemGroup>
     <None Include="..\Shader\lightmaps_cube.fs" />
     <None Include="..\Shader\lightmaps_cube.vs" />
+    <None Include="..\Shader\light_caster.fs" />
+    <None Include="..\Shader\light_caster.vs" />
     <None Include="..\Shader\light_cube_01.fs" />
     <None Include="..\Shader\light_cube_01.vs" />
     <None Include="..\Shader\cube_no_color.fs" />

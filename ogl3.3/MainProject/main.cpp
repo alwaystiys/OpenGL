@@ -8,6 +8,7 @@
 #include "CameraTest.h"
 #include "LightTest.h"
 #include "LightingMaps.h"
+#include "LightCaster.h"
 
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600, true)) {
@@ -31,7 +32,8 @@ int main(int argc, char** argv) {
     //LightTest::FPS2Test *app = new LightTest::FPS2Test();
     //LightTest::BasicLightTest *app = new LightTest::BasicLightTest();
     //LightTest::MaterialTest *app = new LightTest::MaterialTest();
-    LightMapsTest::MaterialTest *app = new LightMapsTest::MaterialTest();
+    //LightMapsTest::MaterialTest *app = new LightMapsTest::MaterialTest();
+    LightCasterTest::LightCaster *app = new LightCasterTest::LightCaster();
     if(!app->Init()) {
         system("pause");
         return 1;
