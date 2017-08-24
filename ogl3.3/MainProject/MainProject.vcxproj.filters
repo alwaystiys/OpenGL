@@ -280,5 +280,11 @@
     <None Include="..\Shader\light_caster.vs">
       <Filter>Shader\Light\LightCaster</Filter>
     </None>
+    <None Include="..\Shader\point_light_caster.vs">
+      <Filter>Shader\Light\LightCaster</Filter>
+    </None>
+    <None Include="..\Shader\point_light_caster.fs">
+      <Filter>Shader\Light\LightCaster</Filter>
+    </None>
   </ItemGroup>
 </Project>

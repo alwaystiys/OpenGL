@@ -34,6 +34,7 @@ int main(int argc, char** argv) {
     //LightTest::MaterialTest *app = new LightTest::MaterialTest();
     //LightMapsTest::MaterialTest *app = new LightMapsTest::MaterialTest();
     LightCasterTest::LightCaster *app = new LightCasterTest::LightCaster();
+    //LightCasterTest::PointLightsTest *app = new LightCasterTest::PointLightsTest();
     if(!app->Init()) {
         system("pause");
         return 1;

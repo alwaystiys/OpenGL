@@ -129,6 +129,8 @@
     <None Include="..\Shader\multi_texture_coordinate_test.vs" />
     <None Include="..\Shader\multi_texture_test.fs" />
     <None Include="..\Shader\multi_texture_transform_test.vs" />
+    <None Include="..\Shader\point_light_caster.fs" />
+    <None Include="..\Shader\point_light_caster.vs" />
     <None Include="..\Shader\simple_texture_test.fs" />
     <None Include="..\Shader\simple_texture_test.vs" />
     <None Include="..\Shader\triangle.fs" />
