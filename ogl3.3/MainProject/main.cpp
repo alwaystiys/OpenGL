@@ -33,8 +33,10 @@ int main(int argc, char** argv) {
     //LightTest::BasicLightTest *app = new LightTest::BasicLightTest();
     //LightTest::MaterialTest *app = new LightTest::MaterialTest();
     //LightMapsTest::MaterialTest *app = new LightMapsTest::MaterialTest();
-    LightCasterTest::LightCaster *app = new LightCasterTest::LightCaster();
+    //LightCasterTest::LightCaster *app = new LightCasterTest::LightCaster();
     //LightCasterTest::PointLightsTest *app = new LightCasterTest::PointLightsTest();
+    //LightCasterTest::SpotlightTest *app = new LightCasterTest::SpotlightTest();
+    LightCasterTest::BetterSpotlightTest *app = new LightCasterTest::BetterSpotlightTest();
     if(!app->Init()) {
         system("pause");
         return 1;

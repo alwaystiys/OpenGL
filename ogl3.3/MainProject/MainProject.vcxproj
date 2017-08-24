@@ -74,6 +74,7 @@
     <ClCompile Include="..\Common\window_backend.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\CameraTest.cpp" />
+    <ClCompile Include="..\src\GlobalData.cpp" />
     <ClCompile Include="..\src\LightCaster.cpp" />
     <ClCompile Include="..\src\LightingMaps.cpp" />
     <ClCompile Include="..\src\LightTest.cpp" />
@@ -88,6 +89,7 @@
   <ItemGroup>
     <ClInclude Include="..\Include\AppTest.h" />
     <ClInclude Include="..\Include\CameraTest.h" />
+    <ClInclude Include="..\Include\GlobalData.h" />
     <ClInclude Include="..\Include\LightCaster.h" />
     <ClInclude Include="..\Include\LightingMaps.h" />
     <ClInclude Include="..\Include\LightTest.h" />
@@ -133,6 +135,10 @@
     <None Include="..\Shader\point_light_caster.vs" />
     <None Include="..\Shader\simple_texture_test.fs" />
     <None Include="..\Shader\simple_texture_test.vs" />
+    <None Include="..\Shader\spot_light_caster.fs" />
+    <None Include="..\Shader\spot_light_caster.vs" />
+    <None Include="..\Shader\spot_light_caster_02.fs" />
+    <None Include="..\Shader\spot_light_caster_02.vs" />
     <None Include="..\Shader\triangle.fs" />
     <None Include="..\Shader\triangle.vs" />
   </ItemGroup>
