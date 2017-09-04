@@ -94,7 +94,7 @@ private:
 
 
 /************************************************************************/
-/*	聚光示例
+/*	更好看的聚光示例
 /************************************************************************/
 class BetterSpotlightTest : public ICallbacks {
 
@@ -115,6 +115,31 @@ private:
     Texture *diffuseMap, *specularMap, *emissionMap;
     vec3 cubePositions[10];
 };
+
+
+/************************************************************************/
+/*	多光源示例
+/************************************************************************/
+class MultiplelightTest : public ICallbacks {
+
+public:
+    MultiplelightTest();
+    ~MultiplelightTest();
+    virtual bool Init();
+    virtual void RenderSceneCB();
+    virtual void ProcessInput(KEY_PRESS, float);
+    virtual void PorcessMouseInput(float, double, double);
+    virtual void PorcessScrollInput(float, double, double);
+
+private:
+    Camera camera;
+    GLuint VBO, cubeVAO, lightVAO;
+    vec3 lightPos;
+    TextureShader *lightingShader, *lambShader;
+    Texture *diffuseMap, *specularMap, *emissionMap;
+    vec3 cubePositions[10];
+};
+
 
 }
 
