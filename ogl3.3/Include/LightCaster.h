@@ -138,6 +138,8 @@ private:
     TextureShader *lightingShader, *lambShader;
     Texture *diffuseMap, *specularMap, *emissionMap;
     vec3 cubePositions[10];
+    vec3 pointLightPositions[4];
+    vec3 pointLightColors[4];
 };
 
 

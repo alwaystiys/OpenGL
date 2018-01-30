@@ -36,7 +36,8 @@ int main(int argc, char** argv) {
     //LightCasterTest::LightCaster *app = new LightCasterTest::LightCaster();
     //LightCasterTest::PointLightsTest *app = new LightCasterTest::PointLightsTest();
     //LightCasterTest::SpotlightTest *app = new LightCasterTest::SpotlightTest();
-    LightCasterTest::BetterSpotlightTest *app = new LightCasterTest::BetterSpotlightTest();
+    //LightCasterTest::BetterSpotlightTest *app = new LightCasterTest::BetterSpotlightTest();
+    LightCasterTest::MultiplelightTest *app = new LightCasterTest::MultiplelightTest();
     if(!app->Init()) {
         system("pause");
         return 1;

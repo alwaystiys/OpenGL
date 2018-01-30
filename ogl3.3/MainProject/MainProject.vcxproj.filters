@@ -310,5 +310,11 @@
     <None Include="..\Shader\spot_light_caster_02.fs">
       <Filter>Shader\Light\LightCaster</Filter>
     </None>
+    <None Include="..\Shader\multiple_lights.fs">
+      <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\multiple_lights.vs">
+      <Filter>Shader\Light</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -128,6 +128,8 @@
     <None Include="..\Shader\light_lamb_01.vs" />
     <None Include="..\Shader\light_material_cube.fs" />
     <None Include="..\Shader\light_material_cube.vs" />
+    <None Include="..\Shader\multiple_lights.fs" />
+    <None Include="..\Shader\multiple_lights.vs" />
     <None Include="..\Shader\multi_texture_coordinate_test.vs" />
     <None Include="..\Shader\multi_texture_test.fs" />
     <None Include="..\Shader\multi_texture_transform_test.vs" />
