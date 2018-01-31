@@ -570,7 +570,7 @@ void BetterSpotlightTest::PorcessScrollInput(float delta, double xoffset, double
 /************************************************************************/
 
 MultiplelightTest::MultiplelightTest() :
-    camera(vec3(0.0f, 0.0f, 5.0f)), lightPos(1.2f, 1.0f, 2.0f) {
+    camera(vec3(0.6f, 0.0f, 3.0f)), lightPos(1.2f, 1.0f, 2.0f) {
     lightingShader = NULL;
     lambShader = NULL;
 }
@@ -610,13 +610,16 @@ bool MultiplelightTest::Init() {
     pointLightPositions[2] = vec3(-4.0f,  2.0f, -12.0f);
     pointLightPositions[3] = vec3(0.0f,  0.0f, -3.0f);
     // 点光源颜色
-    pointLightColors[0] = vec3(0.2f, 0.2f, 0.6f);
-    pointLightColors[1] = vec3(0.3f, 0.3f, 0.7f);
-    pointLightColors[2] = vec3(0.0f, 0.0f, 0.3f);
+    pointLightColors[0] = vec3(0.05f, 0.05f, 0.05f);
+    pointLightColors[1] = vec3(0.8f, 0.8f, 0.8f);
+    pointLightColors[2] = vec3(1.0f, 1.0f, 1.0f);
     pointLightColors[3] = vec3(0.4f, 0.4f, 0.4f);
     diffuseMap = new Texture("../resources/textures/container2.png", GL_RGBA);
     specularMap = new Texture("../resources/textures/lighting_maps_specular_color.png", GL_RGBA);
-    emissionMap = new Texture("../resources/textures/matrix.jpg", GL_RGB);
+    //emissionMap = new Texture("../resources/textures/matrix.jpg", GL_RGB);
+    diffuseMap->Load();
+    specularMap->Load();
+    //emissionMap->Load();
     // init cubeVAO
     glGenVertexArrays(1, &cubeVAO);
     glGenBuffers(1, &VBO);
@@ -629,9 +632,6 @@ bool MultiplelightTest::Init() {
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(sizeof(float) * 6));
     glEnableVertexAttribArray(2);
-    diffuseMap->Load();
-    specularMap->Load();
-    emissionMap->Load();
     glBindVertexArray(0);
     // init lightVAO
     glGenVertexArrays(1, &lightVAO);
@@ -651,8 +651,8 @@ bool MultiplelightTest::Init() {
     // spotLight
     lightingShader->setUniformVec3f("spotLight.position", camera.position);
     lightingShader->setUniformVec3f("spotLight.direction", camera.front);
-    lightingShader->setUniform3f("spotLight.ambient",  0.2f, 0.2f, 0.2f);
-    lightingShader->setUniform3f("spotLight.diffuse",  0.5f, 0.5f, 0.5f); // 将光照调暗了一些以搭配场景
+    lightingShader->setUniform3f("spotLight.ambient",  0.0f, 0.0f, 0.0f);
+    lightingShader->setUniform3f("spotLight.diffuse",  1.0f, 1.0f, 1.0f);
     lightingShader->setUniform3f("spotLight.specular", 1.0f, 1.0f, 1.0f);
     lightingShader->setUniform1f("spotLight.constant", 1.0f);
     lightingShader->setUniform1f("spotLight.linear", 0.09f);
@@ -673,7 +673,7 @@ bool MultiplelightTest::Init() {
     }
     lightingShader->setUniform1i("diffuse", 0);
     lightingShader->setUniform1i("specular", 1);
-    lightingShader->setUniform1i("emission", 2);
+    //lightingShader->setUniform1i("emission", 2);
     ///////
     return true;
 }
@@ -682,7 +682,7 @@ void MultiplelightTest::RenderSceneCB() {
     lightingShader->Enable();
     diffuseMap->Bind(GL_TEXTURE0);
     specularMap->Bind(GL_TEXTURE1);
-    emissionMap->Bind(GL_TEXTURE2);
+    //emissionMap->Bind(GL_TEXTURE2);
     Transform model;
     lightingShader->setUniformMatrix4fv("model", model.getTransformResult());
     Transform view(camera.GetViewMatrix());
@@ -692,7 +692,6 @@ void MultiplelightTest::RenderSceneCB() {
     lightingShader->setUniform3f("viewPos", camera.position.x, camera.position.y, camera.position.z);
     lightingShader->setUniformVec3f("light.direction", camera.front);
     glBindVertexArray(cubeVAO);
-    glDrawArrays(GL_TRIANGLES, 0, 36);
     for(int index = 0; index < 10; index++) {
         Transform model;
         model.translate(cubePositions[index]);
