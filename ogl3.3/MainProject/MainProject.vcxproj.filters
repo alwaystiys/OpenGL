@@ -215,6 +215,9 @@
     <ClInclude Include="..\Include\GlobalData.h">
       <Filter>头文件\Data</Filter>
     </ClInclude>
+    <ClInclude Include="..\Include\Common\lib_mesh.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shader\triangle.fs">
