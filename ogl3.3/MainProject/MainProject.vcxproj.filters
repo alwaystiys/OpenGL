@@ -150,6 +150,9 @@
     <ClCompile Include="..\src\GlobalData.cpp">
       <Filter>源文件\Data</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\lib_mesh.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\Common\window_backend.h">
@@ -216,6 +219,9 @@
       <Filter>头文件\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\Common\lib_mesh.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Common\lib_model.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
   </ItemGroup>
