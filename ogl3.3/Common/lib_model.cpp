@@ -1,12 +1,13 @@
 #include "Common/lib_model.h"
-#include "Common/lib_texture.h"
+#include "Common/texture_utils.h"
+#include <iostream>
 
 Model::Model(string const &path, bool gamma) : gammaCorrection(gamma) {
     loadModel(path);
 }
 
 // 基本上就是遍历了所有网格，并调用它们各自的Draw函数。
-void Model::Draw(ShaderBasic shader) {
+void Model::Draw(CommonShader shader) {
     for(unsigned int i = 0; i < meshes.size(); i++)
         meshes[i].Draw(shader);
 }
@@ -141,11 +142,11 @@ vector<MeshTexture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType t
         if(!skip) {
             // if texture hasn't been loaded already, load it
             MeshTexture texture;
-            //texture.id = TextureFromFile(str.C_Str(), this->directory);
-            //texture.type = typeName;
-            //texture.path = str.C_Str();
-            //textures.push_back(texture);
-            //textures_loaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecesery load duplicate textures.
+            texture.id = textureFromFile(str.C_Str(), this->directory);
+            texture.type = typeName;
+            texture.path = str.C_Str();
+            textures.push_back(texture);
+            textures_loaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecesery load duplicate textures.
         }
     }
     return textures;

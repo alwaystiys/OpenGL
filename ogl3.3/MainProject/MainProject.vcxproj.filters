@@ -91,6 +91,15 @@
     <Filter Include="源文件\Data">
       <UniqueIdentifier>{c13f1962-6634-4c9c-a194-208ed4260dca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\Model">
+      <UniqueIdentifier>{90b0369e-263b-44c5-9798-8f0c0c50c7b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\AppModel">
+      <UniqueIdentifier>{e73c324f-c16e-4ca9-ae0a-6ec1de193b67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AppModel">
+      <UniqueIdentifier>{672ca521-464f-4076-856f-510acbfbda1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -154,6 +163,15 @@
       <Filter>源文件\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Common\lib_model.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\texture_utils.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ModelTest.cpp">
+      <Filter>源文件\AppModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\common_shader.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
   </ItemGroup>
@@ -225,6 +243,15 @@
       <Filter>头文件\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Include\Common\lib_model.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Common\texture_utils.h">
+      <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ModelTest.h">
+      <Filter>头文件\AppModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Common\common_shader.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
   </ItemGroup>
@@ -327,6 +354,12 @@
     </None>
     <None Include="..\Shader\multiple_lights.vs">
       <Filter>Shader\Light</Filter>
+    </None>
+    <None Include="..\Shader\1.model_loading.vs">
+      <Filter>Shader\Model</Filter>
+    </None>
+    <None Include="..\Shader\1.model_loading.fs">
+      <Filter>Shader\Model</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -1,8 +1,9 @@
 #ifndef LIB_MODEL_H
 #define LIB_MODEL_H
 
+
 #include "Common/lib_mesh.h"
-#include "Common/shader_basic.h"
+#include "Common/common_shader.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
@@ -18,7 +19,7 @@ public:
     /*  Functions   */
     // constructor, expects a filepath to a 3D model.
     Model(string const &path, bool gamma = false);
-    void Draw(ShaderBasic shader);
+    void Draw(CommonShader shader);
 private:
     /*  º¯Êý   */
     void loadModel(string path);

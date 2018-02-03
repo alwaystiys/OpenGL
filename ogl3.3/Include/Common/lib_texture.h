@@ -1,9 +1,10 @@
 #ifndef LIB_TEXTURE_H
 #define LIB_TEXTURE_H
+
+#define GLEW_STATIC
 #include <GL/glew.h>
 #include <iostream>
 #include <string>
-
 
 class Texture {
 public:

@@ -9,6 +9,7 @@
 #include "LightTest.h"
 #include "LightingMaps.h"
 #include "LightCaster.h"
+#include "ModelTest.h"
 
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600, true)) {
@@ -37,7 +38,8 @@ int main(int argc, char** argv) {
     //LightCasterTest::PointLightsTest *app = new LightCasterTest::PointLightsTest();
     //LightCasterTest::SpotlightTest *app = new LightCasterTest::SpotlightTest();
     //LightCasterTest::BetterSpotlightTest *app = new LightCasterTest::BetterSpotlightTest();
-    LightCasterTest::MultiplelightTest *app = new LightCasterTest::MultiplelightTest();
+    //LightCasterTest::MultiplelightTest *app = new LightCasterTest::MultiplelightTest();
+	ModelTest *app = new ModelTest();
     if(!app->Init()) {
         system("pause");
         return 1;
