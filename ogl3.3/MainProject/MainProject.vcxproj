@@ -70,6 +70,7 @@
     <ClCompile Include="..\Common\lib_camera.cpp" />
     <ClCompile Include="..\Common\lib_math.cpp" />
     <ClCompile Include="..\Common\lib_mesh.cpp" />
+    <ClCompile Include="..\Common\lib_model.cpp" />
     <ClCompile Include="..\Common\lib_texture.cpp" />
     <ClCompile Include="..\Common\lib_transform.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
