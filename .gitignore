@@ -28,6 +28,6 @@ Makefile-Release.mk
 *.unsuccessfulbuild
 
 *.opensdf
-
+*/*/Debug/*
 */Debug/*
 */content/*
