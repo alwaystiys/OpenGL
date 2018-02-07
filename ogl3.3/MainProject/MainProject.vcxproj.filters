@@ -100,6 +100,15 @@
     <Filter Include="源文件\AppModel">
       <UniqueIdentifier>{672ca521-464f-4076-856f-510acbfbda1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\Advance">
+      <UniqueIdentifier>{4fb856d4-5728-4003-964a-c54146755367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\AppAdvance">
+      <UniqueIdentifier>{ffec7b25-920f-4f86-bdfa-3cebcd5f576d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AppAdvance">
+      <UniqueIdentifier>{c31464ba-e9e6-4ad6-8d41-510d2a481253}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -173,6 +182,9 @@
     </ClCompile>
     <ClCompile Include="..\Common\common_shader.cpp">
       <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AdvanceTest.cpp">
+      <Filter>源文件\AppAdvance</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="..\Include\Common\common_shader.h">
       <Filter>头文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\AdvanceTest.h">
+      <Filter>头文件\AppAdvance</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +375,12 @@
     </None>
     <None Include="..\Shader\1.model_loading.fs">
       <Filter>Shader\Model</Filter>
+    </None>
+    <None Include="..\Shader\depth_testing.fs">
+      <Filter>Shader\Advance</Filter>
+    </None>
+    <None Include="..\Shader\depth_testing.vs">
+      <Filter>Shader\Advance</Filter>
     </None>
   </ItemGroup>
 </Project>
