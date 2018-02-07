@@ -66,6 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Common\app_callbacks.cpp" />
     <ClCompile Include="..\Common\basic_util.cpp" />
     <ClCompile Include="..\Common\common_shader.cpp" />
     <ClCompile Include="..\Common\lib_camera.cpp" />

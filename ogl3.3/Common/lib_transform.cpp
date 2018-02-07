@@ -10,6 +10,11 @@ Transform::Transform(glm::mat4 matrix) {
 Transform::~Transform() {
 }
 
+void Transform::reset() {
+	mat4 object;
+	transform = object;
+}
+
 Transform& Transform::translate(vec3 v) {
     transform = glm::translate(transform, v);
     return *this;

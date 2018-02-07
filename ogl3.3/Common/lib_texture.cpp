@@ -4,6 +4,7 @@
 
 Texture::Texture(const char* fileName, GLenum format) {
     this->m_fileName = fileName;
+	// useless field
     this->m_format = format;
 }
 
@@ -22,7 +23,14 @@ bool Texture::Load() {
     GLint width, height, nrChannels;
     unsigned char *data = stbi_load(this->m_fileName, &width, &height, &nrChannels, 0);
     if(data) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, this->m_format, GL_UNSIGNED_BYTE, data);
+		GLenum format;
+		if(nrChannels == 1)
+			format = GL_RED;
+		else if(nrChannels == 3)
+			format = GL_RGB;
+		else if(nrChannels == 4)
+			format = GL_RGBA;
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
     } else {
         std::cout << "Failed to load texture" << std::endl;

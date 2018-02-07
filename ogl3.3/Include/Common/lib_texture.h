@@ -8,7 +8,7 @@
 
 class Texture {
 public:
-    Texture(const char* fileName, GLenum m_format);
+    Texture(const char* fileName, GLenum m_format = GL_RGBA);
     ~Texture();
     bool Load();
     void Bind(GLenum textureUnit); //激活纹理单元

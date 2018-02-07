@@ -186,6 +186,9 @@
     <ClCompile Include="..\src\AdvanceTest.cpp">
       <Filter>源文件\AppAdvance</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\app_callbacks.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Include\Common\window_backend.h">

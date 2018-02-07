@@ -16,6 +16,7 @@ public:
     Transform& rotate(float angle, float x, float y, float z);
     Transform& scale(float x, float y, float z);
     float* getTransformResult();
+	void reset();
 
 private:
     mat4 transform;
