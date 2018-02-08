@@ -46,6 +46,8 @@ void GLFWBackendRun(ICallbacks* pCallbacks) {
     }
     s_pCallbacks = pCallbacks;
     glEnable(GL_DEPTH_TEST);
+    //glEnable(GL_STENCIL_TEST);
+    pCallbacks->PreRenderConfig();
     // render loop
     // -----------
     while(!glfwWindowShouldClose(window)) {
@@ -57,9 +59,8 @@ void GLFWBackendRun(ICallbacks* pCallbacks) {
         processInput(window);
         // render
         // ------
-        //glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        //glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_TEST);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------

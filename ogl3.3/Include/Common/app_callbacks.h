@@ -10,6 +10,7 @@ public:
     virtual bool Init() {
         return true;
     };
+    virtual void PreRenderConfig() {};
     virtual void RenderSceneCB() {};
     virtual void ProcessInput(KEY_PRESS, float) {};
     virtual void PorcessMouseInput(float, double, double) {};
@@ -17,19 +18,20 @@ public:
 
 };
 
-class CommonCallbacks : public ICallbacks{
+class CommonCallbacks : public ICallbacks {
 public:
-	 CommonCallbacks();
+    CommonCallbacks();
     ~CommonCallbacks();
-	virtual bool Init() {
-		return true;
-	};
-	virtual void RenderSceneCB() {};
-	virtual void ProcessInput(KEY_PRESS, float);
-	virtual void PorcessMouseInput(float, double, double);
-	virtual void PorcessScrollInput(float, double, double);
+    virtual bool Init() {
+        return true;
+    };
+    virtual void PreRenderConfig() {};
+    virtual void RenderSceneCB() {};
+    virtual void ProcessInput(KEY_PRESS, float);
+    virtual void PorcessMouseInput(float, double, double);
+    virtual void PorcessScrollInput(float, double, double);
 protected:
-	Camera camera;
+    Camera camera;
 };
 
 #endif APP_CALLBACKS_H

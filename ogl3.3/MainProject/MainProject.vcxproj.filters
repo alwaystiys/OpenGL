@@ -109,6 +109,12 @@
     <Filter Include="源文件\AppAdvance">
       <UniqueIdentifier>{c31464ba-e9e6-4ad6-8d41-510d2a481253}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\Advance\DepthTesting">
+      <UniqueIdentifier>{98b40105-991d-462e-8fe3-c2530fe15d14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Advance\StencilTesing">
+      <UniqueIdentifier>{d337425a-d2b8-4615-8125-0ce506876037}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -183,11 +189,14 @@
     <ClCompile Include="..\Common\common_shader.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\AdvanceTest.cpp">
-      <Filter>源文件\AppAdvance</Filter>
-    </ClCompile>
     <ClCompile Include="..\Common\app_callbacks.cpp">
       <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StencilTest.cpp">
+      <Filter>源文件\AppAdvance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DepthTest.cpp">
+      <Filter>源文件\AppAdvance</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -269,7 +278,10 @@
     <ClInclude Include="..\Include\Common\common_shader.h">
       <Filter>头文件\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Include\AdvanceTest.h">
+    <ClInclude Include="..\Include\StencilTest.h">
+      <Filter>头文件\AppAdvance</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\DepthTest.h">
       <Filter>头文件\AppAdvance</Filter>
     </ClInclude>
   </ItemGroup>
@@ -380,10 +392,13 @@
       <Filter>Shader\Model</Filter>
     </None>
     <None Include="..\Shader\depth_testing.fs">
-      <Filter>Shader\Advance</Filter>
+      <Filter>Shader\Advance\DepthTesting</Filter>
     </None>
     <None Include="..\Shader\depth_testing.vs">
-      <Filter>Shader\Advance</Filter>
+      <Filter>Shader\Advance\DepthTesting</Filter>
+    </None>
+    <None Include="..\Shader\depth_testing_02.fs">
+      <Filter>Shader\Advance\DepthTesting</Filter>
     </None>
   </ItemGroup>
 </Project>

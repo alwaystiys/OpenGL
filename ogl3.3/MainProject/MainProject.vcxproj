@@ -77,7 +77,7 @@
     <ClCompile Include="..\Common\lib_transform.cpp" />
     <ClCompile Include="..\Common\texture_utils.cpp" />
     <ClCompile Include="..\Common\window_backend.cpp" />
-    <ClCompile Include="..\src\AdvanceTest.cpp" />
+    <ClCompile Include="..\src\DepthTest.cpp" />
     <ClCompile Include="..\src\AppTest.cpp" />
     <ClCompile Include="..\src\CameraTest.cpp" />
     <ClCompile Include="..\src\GlobalData.cpp" />
@@ -89,12 +89,13 @@
     <ClCompile Include="..\src\ShaderTriangle.cpp" />
     <ClCompile Include="..\src\SimpleTriangle.cpp" />
     <ClCompile Include="..\src\shader_basic.cpp" />
+    <ClCompile Include="..\src\StencilTest.cpp" />
     <ClCompile Include="..\src\TextureTest.cpp" />
     <ClCompile Include="..\src\TransformTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\AdvanceTest.h" />
+    <ClInclude Include="..\Include\DepthTest.h" />
     <ClInclude Include="..\Include\AppTest.h" />
     <ClInclude Include="..\Include\CameraTest.h" />
     <ClInclude Include="..\Include\Common\common_shader.h" />
@@ -119,6 +120,7 @@
     <ClInclude Include="..\Include\Common\shader_const.h" />
     <ClInclude Include="..\Include\Common\shader_basic.h" />
     <ClInclude Include="..\Include\Common\window_backend.h" />
+    <ClInclude Include="..\Include\StencilTest.h" />
     <ClInclude Include="..\Include\TextureTest.h" />
     <ClInclude Include="..\Include\TransformTest.h" />
   </ItemGroup>
@@ -127,6 +129,7 @@
     <None Include="..\Shader\1.model_loading.vs" />
     <None Include="..\Shader\depth_testing.fs" />
     <None Include="..\Shader\depth_testing.vs" />
+    <None Include="..\Shader\depth_testing_02.fs" />
     <None Include="..\Shader\lightmaps_cube.fs" />
     <None Include="..\Shader\lightmaps_cube.vs" />
     <None Include="..\Shader\light_caster.fs" />
