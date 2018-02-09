@@ -17,12 +17,13 @@ class StencilTesting : public CommonCallbacks {
 public:
     StencilTesting();
     ~StencilTesting();
-    virtual bool Init();
+    virtual void GLClearConfig();
     virtual void PreRenderConfig();
+    virtual bool Init();
     virtual void RenderSceneCB();
 private:
     GLuint VBO, planeVBO, cubeVAO, planeVAO;
-    CommonShader *m_shader;
+    CommonShader *m_shader, *m_outline_shader;
     Texture *cubeTexture, *floorTexture;
 };
 }

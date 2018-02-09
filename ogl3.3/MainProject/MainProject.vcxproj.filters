@@ -400,5 +400,14 @@
     <None Include="..\Shader\depth_testing_02.fs">
       <Filter>Shader\Advance\DepthTesting</Filter>
     </None>
+    <None Include="..\Shader\stencil_single_color.fs">
+      <Filter>Shader\Advance\StencilTesing</Filter>
+    </None>
+    <None Include="..\Shader\stencil_testing.vs">
+      <Filter>Shader\Advance\StencilTesing</Filter>
+    </None>
+    <None Include="..\Shader\stencil_testing.fs">
+      <Filter>Shader\Advance\StencilTesing</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -10,7 +10,13 @@ public:
     virtual bool Init() {
         return true;
     };
-    virtual void PreRenderConfig() {};
+    virtual void GLClearConfig() {
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    };
+    virtual void PreRenderConfig() {
+        glEnable(GL_DEPTH_TEST);
+    };
     virtual void RenderSceneCB() {};
     virtual void ProcessInput(KEY_PRESS, float) {};
     virtual void PorcessMouseInput(float, double, double) {};

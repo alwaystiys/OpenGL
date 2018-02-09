@@ -161,6 +161,9 @@
     <None Include="..\Shader\spot_light_caster.vs" />
     <None Include="..\Shader\spot_light_caster_02.fs" />
     <None Include="..\Shader\spot_light_caster_02.vs" />
+    <None Include="..\Shader\stencil_single_color.fs" />
+    <None Include="..\Shader\stencil_testing.fs" />
+    <None Include="..\Shader\stencil_testing.vs" />
     <None Include="..\Shader\triangle.fs" />
     <None Include="..\Shader\triangle.vs" />
   </ItemGroup>

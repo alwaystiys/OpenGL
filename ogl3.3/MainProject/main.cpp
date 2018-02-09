@@ -11,6 +11,7 @@
 #include "LightCaster.h"
 #include "ModelTest.h"
 #include "DepthTest.h"
+#include "StencilTest.h"
 int main(int argc, char** argv) {
     if(!GLFWBackendCreateWindow("TestDemo", 800, 600, true)) {
         return 1;
@@ -39,8 +40,9 @@ int main(int argc, char** argv) {
     //LightCasterTest::SpotlightTest *app = new LightCasterTest::SpotlightTest();
     //LightCasterTest::BetterSpotlightTest *app = new LightCasterTest::BetterSpotlightTest();
     //LightCasterTest::MultiplelightTest *app = new LightCasterTest::MultiplelightTest();
-    ModelTest *app = new ModelTest();
+    //ModelTest *app = new ModelTest();
     //DepthTest::DepthTesting *app = new DepthTest::DepthTesting();
+    StencilTest::StencilTesting *app = new StencilTest::StencilTesting();
     if(!app->Init()) {
         system("pause");
         return 1;
