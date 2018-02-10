@@ -84,7 +84,8 @@ void StencilTesting::RenderSceneCB() {
     m_outline_shader->Enable();
     m_outline_shader->setUniformMatrix4fv("view", view.getTransformResult());
     m_outline_shader->setUniformMatrix4fv("projection", projection.getTransformResult());
-    // draw floor as normal, but don't write the floor to the stencil buffer, we only care about the containers. We set its mask to 0x00 to not write to the stencil buffer.
+    // draw floor as normal, but don't write the floor to the stencil buffer,
+    // we only care about the containers. We set its mask to 0x00 to not write to the stencil buffer.
     glStencilMask(0x00);
     //
     Transform transform;
